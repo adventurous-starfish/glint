@@ -1,20 +1,19 @@
 'use strict';
 
+
 describe('MainCtrl', function(){
-
   beforeEach(module('glint'));
-  beforeEach(inject(function($injector){
-    var $controller = $injector.get('$controller');
+  var scope;
+  var ctrl;
 
-    createController = function(){
-      return $controller('MainCtrl', {
-        ideas: [1, 2, 3]
-      });
-    };
+  beforeEach(inject(function($rootScope, $controller) {
+    scope = $rootScope.$new();
+    ctrl = $controller('MainCtrl', {
+      self: scope,
+    });
   }));
 
   it('should have an ideas property on the controller', function(){
-    createController();
-    expect(MainCtrl).to.have.property('ideas', [1, 2, 3]);
+    expect(ctrl).to.have.property('ideas');
   });
 });
