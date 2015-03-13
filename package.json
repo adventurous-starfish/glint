@@ -11,13 +11,14 @@
     "body-parser": "^1.5.2",
     "chai": "^1.9.0",
     "express": "~4.0.0",
+    "karma": "^0.12.16",
     "karma-chrome-launcher": "0.1.7",
     "karma-cli": "0.0.4",
-    "karma": "^0.12.16",
     "mocha": "^1.17.1",
     "mongodb": "1.4.34",
     "mongoose": "3.8.24",
-    "nodemon": "^1.2.1"
+    "nodemon": "^1.2.1",
+    "supertest": "^0.15.0"
   },
   "devDependencies": {
     "karma-chai": "^0.1.0",
