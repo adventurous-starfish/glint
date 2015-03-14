@@ -1,5 +1,5 @@
 .nav-bar-custom {
-  background-color: #0f7c74;
+  background-color: #046380;
   color: white;
 }
 
@@ -13,6 +13,7 @@
 
 .jumbo-top {
 	text-align: center;
+  margin-bottom: 0 !important;
 }
 
 .jumbo-top h1 {
@@ -39,4 +40,23 @@ i.fa-sort-asc, i.fa-sort-desc {
 
 .idea-title {
   margin-top: 0;
+}
+
+.idea-post:hover {
+  background-color: #fff5e2;
+}
+
+.idea-post {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+i.fa-comments {
+  font-size: 30px;
+}
+
+.comments-wrapper {
+  margin-top: 10px;
+  width: 50px;
+  text-align: center;
 }
