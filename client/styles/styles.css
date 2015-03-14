@@ -1,0 +1,42 @@
+.nav-bar-custom {
+  background-color: #0f7c74;
+  color: white;
+}
+
+.nav-bar-custom a{
+  color: white;
+}
+
+.nav-bar-custom a:hover{
+  color: black;
+}
+
+.jumbo-top {
+	text-align: center;
+}
+
+.jumbo-top h1 {
+  padding-bottom: 15px;
+}
+
+input.form-control {
+  width: 600px !important;
+}
+
+.row {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+.upvote-downvote-wrapper {
+  width: 45px !important;
+  text-align: center;
+}
+
+i.fa-sort-asc, i.fa-sort-desc {
+  font-size: 25px;
+}
+
+.idea-title {
+  margin-top: 0;
+}
