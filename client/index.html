@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="styles/styles.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
 </head>
 <body ng-app="glint" ng-controller="MainCtrl">
   <div class="container-fluid nav-bar-custom">
@@ -25,29 +26,41 @@
     <h1>What's your great idea?</h1>
     <form class="navbar-form navbar-middle" role="search">
       <div class="form-group">
-        <input type="text" class="form-control" placeholder="Search">
+        <input type="text" class="form-control" placeholder="Enter idea here">
       </div>
       <button type="submit" class="btn btn-default">Submit</button>
     </form>
   </div>
+  
+
+  <!-- Idea Row -->
   <div class="row idea-post">
     <div class="col-md-1">
     </div>
     <div class="col-md-1 upvote-downvote-wrapper">
       <i class="fa fa-sort-asc"></i>
-      <div class="karma-points">53</div>
+      <div class="karma-points">342</div>
       <i class="fa fa-sort-desc"></i>
     </div>
     <div class="col-md-8">
       <div class="idea-wrapper">
         <h3 class="idea-title">An uber for cats</h3>
-        <h5>Imagine a world where cats can roam free and never have to walk again! Introducting Uber for ca...</h5>
+        <h5 class="idea-description">Imagine a world where cats can roam free and never have to walk again! Introducting Uber for ca...</h5>
+        <p class="timestamp-author">Submitted 4 hours ago by Super Tom</p>
       </div>
     </div>
-    <div class="col-md-2">
-      <i class="fa fa-comments"></i>
+    <div class="col-md-1 ">
+      <div class="comments-wrapper">
+        <i class="fa fa-comments"></i>
+        <p>532</p>
+      </div>
+    </div>
+    <div class="col-md-1">
     </div>
   </div>
+
+
+
 
 
 </body>

@@ -1,5 +1,9 @@
+body {
+  font-family: 'Lato', sans-serif !important;
+}
+
 .nav-bar-custom {
-  background-color: #0f7c74;
+  background-color: #046380;
   color: white;
 }
 
@@ -13,10 +17,13 @@
 
 .jumbo-top {
 	text-align: center;
+  margin-bottom: 0 !important;
 }
 
 .jumbo-top h1 {
   padding-bottom: 15px;
+  font-family: 'Lato', sans-serif;
+  font-weight: bold;
 }
 
 input.form-control {
@@ -29,7 +36,7 @@ input.form-control {
 }
 
 .upvote-downvote-wrapper {
-  width: 45px !important;
+  width: 55px !important;
   text-align: center;
 }
 
@@ -39,4 +46,34 @@ i.fa-sort-asc, i.fa-sort-desc {
 
 .idea-title {
   margin-top: 0;
+  font-family: 'Lato', sans-serif;
+  font-weight: bold;
+}
+
+.idea-post:hover {
+  background-color: #fff5e2;
+}
+
+.idea-post {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+i.fa-comments {
+  font-size: 30px;
+}
+
+.comments-wrapper {
+  margin-top: 10px;
+  width: 50px;
+  text-align: center;
+  float: right;
+}
+
+.karma-points {
+  padding: 5px 0;
+}
+
+.timestamp-author {
+  margin-bottom: 0;
 }
