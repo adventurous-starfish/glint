@@ -2,8 +2,8 @@
 <html>
 <head>
   <title>Glint</title>
-  <script src="../glint.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.12/angular.min.js"></script>
+  <script src="glint.js"></script>
   <link rel="stylesheet" href="styles/styles.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
@@ -23,11 +23,11 @@
   </div>
   <div class="jumbotron jumbo-top">
     <h1>What's your great idea?</h1>
-    <form class="navbar-form navbar-middle" role="search">
+    <form class="navbar-form navbar-middle" ng-controller="SubmitIdea as submit">
       <div class="form-group">
         <input type="text" class="form-control" placeholder="Enter idea here">
       </div>
-      <button type="submit" class="btn btn-default">Submit</button>
+      <button type="submit" class="btn btn-default" ng-click="submit.submit()">Submit</button>
     </form>
   </div>
   

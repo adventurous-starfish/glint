@@ -7,3 +7,9 @@ app.controller('MainCtrl', function(){
 
   self.addIdea = function(){};
 });
+
+app.controller('SubmitIdea', function(){
+	this.submit = function(){
+    window.alert('HOORAY!');
+  }
+})
