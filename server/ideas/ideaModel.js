@@ -3,6 +3,7 @@ var mongoose = require('mongoose');
 var IdeaSchema = new mongoose.Schema({
     title: String,
     text: String,
+    votes: { type: Number, default: 0 },
     views: { type: Number, default: 0 },
     created_by: { type: String, default: 'anonymous' },
     created_at: { type: Date, default: Date.now },
