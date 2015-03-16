@@ -59,7 +59,4 @@ describe('VotesCtrl', function(){
     //
   });
 
-  it('should have an countVotes function', function(){
-    //
-  });
 });
