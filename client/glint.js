@@ -3,18 +3,7 @@ var app = angular.module('glint', []);
 app.controller('MainCtrl', function(){
   var self = this;
 
-  /*
-  title: String,
-  text: String,
-  views: { type: Number, default: 0 },
-  created_by: { type: String, default: 'anonymous' },
-  created_at: { type: Date, default: Date.now },
-  category: { type: String, default: '' },
-  roles: [String],
-  comments: [String],
-  delete_flag: { type: Boolean, default: false }
-  */
-
+  // mocked up data for now
   self.ideas = [
     {
       title: 'Uber for cats',
@@ -30,27 +19,32 @@ app.controller('MainCtrl', function(){
     }
   ];
 
-  self.addIdea = function(){};
+  // db GET request
+  self.getIdeas = function(){};
+
 });
 
-app.controller('SubmitIdea', function(){
-  // ideaEntry is the text inside of .form-control input box
-  this.ideaEntry;
+app.controller('SubmitIdeaCtrl', function(){
+  var self = this;
 
+  // db POST request
+  // remember to escape input
   // submitIdea is called when submit button is clicked
-	this.submitIdea = function(){
-    window.alert(this.ideaEntry);
-  }
+	self.submitIdea = function(){
+    window.alert(self.ideaEntry);
+  };
 
-})
+});
 
-/*
-  - 1: upvote
-  - 1: downvote
-  - 1: get idea vote count
-  - 1: get ideas (from db)
-  - 1: submit idea
+app.controller('VotesCtrl', function(){
+  var self = this;
 
-  - 1: input escaping
-  - 4: get comment count
-*/
+  // db POST request
+  self.upvote = function(){};
+
+  // db POST request
+  self.downvote = function(){};
+
+  // db GET request
+  self.countVotes = function(){};
+});

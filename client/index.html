@@ -23,7 +23,7 @@
   </div>
   <div class="jumbotron jumbo-top">
     <h1>What's your great idea?</h1>
-    <form class="navbar-form navbar-middle" ng-controller="SubmitIdea as submit">
+    <form class="navbar-form navbar-middle" ng-controller="SubmitIdeaCtrl as submit">
       <div class="form-group">
         <input type="text" class="form-control" placeholder="Enter idea here" ng-model="submit.ideaEntry">
       </div>
@@ -36,10 +36,10 @@
   <div class="row idea-post" ng-repeat="idea in mctrl.ideas"> 
     <div class="col-md-1">
     </div>
-    <div class="col-md-1 upvote-downvote-wrapper">
-      <i class="fa fa-sort-asc"></i>
-      <div class="karma-points">342</div>
-      <i class="fa fa-sort-desc"></i>
+    <div class="col-md-1 upvote-downvote-wrapper" ng-controller="VotesCtrl as vctrl">
+      <i class="fa fa-sort-asc"></i> <!-- upvote -->
+      <div class="vote-points">342</div>
+      <i class="fa fa-sort-desc"></i> <!-- downvote -->
     </div>
     <div class="col-md-8">
       <div class="idea-wrapper">
