@@ -13,7 +13,6 @@ glintServices.factory('Votes', function($http){
     .catch(function(err) {
       console.error('updateVotes error', error);
     });
-
   };
   return {
     updateVotes : updateVotes
