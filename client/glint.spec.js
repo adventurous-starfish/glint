@@ -18,7 +18,7 @@ describe('IdeasCtrl', function(){
   });
 
   it('should have a displayIdeas function', function(){
-    expect(ctrl.getIdeas).to.be.a('function');
+    expect(ctrl.displayIdeas).to.be.a('function');
   });
 
   it('should have a submitIdea function', function(){
