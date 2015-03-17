@@ -1,4 +1,4 @@
-var app = angular.module('glint', []);
+var app = angular.module('glint', ['glint.services']);
 
 app.controller('MainCtrl', function(){
   var self = this;
