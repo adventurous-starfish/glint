@@ -23,11 +23,11 @@
   </div>
   <div class="jumbotron jumbo-top">
     <h1>What's your great idea?</h1>
-    <form class="navbar-form navbar-middle" ng-controller="SubmitIdeaCtrl as submit">
+    <form class="navbar-form navbar-middle" ng-submit="submit.submitIdea()" ng-controller="SubmitIdeaCtrl as submit">
       <div class="form-group">
         <input type="text" class="form-control" placeholder="Enter idea here" ng-model="submit.ideaEntry">
       </div>
-      <button type="submit" class="btn btn-default" ng-click="submit.submitIdea()">Submit</button>
+      <button type="submit" class="btn btn-default">Submit</button>
     </form>
   </div>
   
@@ -36,22 +36,25 @@
   <div class="row idea-post" ng-repeat="idea in mctrl.ideas"> 
     <div class="col-md-1">
     </div>
-    <div class="col-md-1 upvote-downvote-wrapper" ng-controller="VotesCtrl as vctrl">
-      <i class="fa fa-sort-asc"></i> <!-- upvote -->
-      <div class="vote-points">{{ idea.votes }}</div>
-      <i class="fa fa-sort-desc"></i> <!-- downvote -->
-    </div>
-    <div class="col-md-8">
-      <div class="idea-wrapper">
-        <h3 class="idea-title">{{ idea.title }}</h3>
-        <h5 class="idea-description">{{ idea.text }}</h5>
-        <p class="timestamp-author">Submitted {{ idea.created_at }} by {{ idea.created_by }}</p>
+
+    <div class="idea-container">
+      <div class="col-md-1 upvote-downvote-wrapper" ng-controller="VotesCtrl as vctrl">
+        <i class="fa fa-sort-asc" ng-click="vctrl.upvote()"></i> <!-- upvote -->
+        <div class="vote-points">{{ idea.votes }}</div>
+        <i class="fa fa-sort-desc" ng-click="vctrl.downvote()"></i> <!-- downvote -->
       </div>
-    </div>
-    <div class="col-md-1 ">
-      <div class="comments-wrapper">
-        <i class="fa fa-comments"></i>
-        <p>532</p>
+      <div class="col-md-8">
+        <div class="idea-wrapper">
+          <h3 class="idea-title">{{ idea.title }}</h3>
+          <h5 class="idea-description">{{ idea.text }}</h5>
+          <p class="timestamp-author">Submitted {{ idea.created_at }} by {{ idea.created_by }}</p>
+        </div>
+      </div>
+      <div class="col-md-1 ">
+        <div class="comments-wrapper">
+          <i class="fa fa-comments"></i>
+          <p class="comments-amount">532</p>
+        </div>
       </div>
     </div>
     <div class="col-md-1">

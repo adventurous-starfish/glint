@@ -28,12 +28,14 @@ app.controller('MainCtrl', function(){
 
 app.controller('SubmitIdeaCtrl', function(){
   var self = this;
+  var list = [];
 
   // db POST request
   // remember to escape input
   // submitIdea is called when submit button is clicked
 	self.submitIdea = function(){
     window.alert(self.ideaEntry);
+    // list.push(self.ideaEntry);
   };
 
 });
@@ -48,17 +50,20 @@ app.controller('VotesCtrl', function(){
   //   2) doing this simply increments only by user added vote, keeping
   //      the results more like what user expects
   self.upvote = function(){
-    Votes.updateVote()
-      .then(function(response){
-        //
-      })
-      .catch(function(error){
-        //
-      });
+    console.log('upvote');
+    // Votes.updateVote()
+    //   .then(function(response){
+
+    //   })
+    //   .catch(function(error){
+
+    //   });
   };
 
   // if results handling here is different from upvote, then
   // specify difference here. Otherwise, remove.
-  self.downvote = function(){};
+  self.downvote = function(){
+    console.log('downvote');
+  };
 
 });
