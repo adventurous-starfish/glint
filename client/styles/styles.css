@@ -83,12 +83,12 @@ i.fa-comments {
 
 i.fa-comments:hover {
   cursor: pointer;
-  color: black;
+  color: #046380;
 }
 
 i.fa-comments:active {
   cursor: pointer;
-  color: #046380;
+  color: #03495e;
 }
 
 .comments-wrapper {
