@@ -5,8 +5,16 @@ app.controller('IdeasCtrl', function(Ideas){
   self.data = { ideas: [] };
 
   // db GET request moves to factory
-  self.getIdeas = function(){
-    self.ideas.push(Ideas.getIdeas());
+  self.displayIdeas = function(){
+    Ideas.getIdeas()
+      .then(function(results){
+        console.log('displayIdeas success', results);
+        self.data.ideas = results;
+        console.log('data.ideas', self.data.ideas);
+      })
+      .catch(function(error){
+        console.error('displayIdeas error', error);
+      });
   };
 
   // submitIdea is called when submit button is clicked
@@ -21,12 +29,15 @@ app.controller('IdeasCtrl', function(Ideas){
     Ideas.createIdea(idea)
       .then(function(response){
         console.log('createIdea success', response);
-
+        // will need to display something to user to confirm post
+        self.displayIdeas();
       })
       .catch(function(error){
         console.error('createIdea error', error);
       });
   };
+
+  self.displayIdeas();
 
 });
 

@@ -17,7 +17,7 @@ describe('IdeasCtrl', function(){
     expect(ctrl).to.have.property('data');    
   });
 
-  it('should have a getIdeas function', function(){
+  it('should have a displayIdeas function', function(){
     expect(ctrl.getIdeas).to.be.a('function');
   });
 
