@@ -44,10 +44,28 @@ i.fa-sort-asc, i.fa-sort-desc {
   font-size: 25px;
 }
 
+i.fa-sort-asc:hover, i.fa-sort-desc:hover {
+  cursor: pointer;
+  color: #046380;
+}
+
+i.fa-sort-asc:active, i.fa-sort-desc:active {
+  cursor: pointer;
+  color: #03495e;
+}
+
+.idea-container:hover {
+  cursor: pointer;
+}
+
 .idea-title {
   margin-top: 0;
   font-family: 'Lato', sans-serif;
   font-weight: bold;
+}
+
+.idea-title:hover {
+  text-decoration: underline;
 }
 
 .idea-post:hover {
@@ -61,6 +79,16 @@ i.fa-sort-asc, i.fa-sort-desc {
 
 i.fa-comments {
   font-size: 30px;
+}
+
+i.fa-comments:hover {
+  cursor: pointer;
+  color: black;
+}
+
+i.fa-comments:active {
+  cursor: pointer;
+  color: #046380;
 }
 
 .comments-wrapper {
@@ -77,3 +105,4 @@ i.fa-comments {
 .timestamp-author {
   margin-bottom: 0;
 }
+
