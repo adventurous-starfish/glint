@@ -16,4 +16,5 @@ db.once('open', function() {
 // connect the server to the middleware
 require('./config/middleware.js')(app, express);
 
-module.exports = app;
+module.exports.app = app;
+module.exports.db = db;
