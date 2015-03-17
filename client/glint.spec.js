@@ -18,7 +18,7 @@ describe('MainCtrl', function(){
   });
 
   it('should have a getIdeas function', function(){
-    //
+    expect(ctrl.getIdeas).to.be.a('function');
   });
 });
 
@@ -34,8 +34,8 @@ describe('SubmitIdeaCtrl', function(){
     });
   }));
 
-  it('should have a submitIdeas function', function(){
-    //
+  it('should have a submitIdea function', function(){
+    expect(ctrl.submitIdea).to.be.a('function');
   });
 });
 
@@ -52,11 +52,12 @@ describe('VotesCtrl', function(){
   }));
 
   it('should have an upvote function', function(){
-    //
+    expect(ctrl.upvote).to.be.a('function');
   });
 
   it('should have an downvote function', function(){
-    //
+    expect(ctrl.downvote).to.be.a('function');
   });
 
 });
+
