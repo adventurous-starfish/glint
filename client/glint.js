@@ -18,6 +18,30 @@ app.controller('MainCtrl', function(){
       votes: 654,
       created_by: 'Fidoman',
       created_at: moment('Sun Mar 15 2015 15:06:59 GMT-0700 (PDT)').fromNow(),
+    },
+
+    {
+      title: 'Uber for meerkats',
+      text: 'Imagine a world where meerkats can roam free and never have to walk again! Introducting Uber for meerkats. The doggiest uber ever. Seriously, we\'re talking pickups for pooches. Cabs for canines. Man\'s best friend will be able to follow him around anywhere. How amazing would that be? You go out for a jog, and then BOOM there\'s little Kibbler, head hanging out the back of a yellow cab, tongue lolling and spittle drooling down the door. Just watching you.',
+      votes: 512,
+      created_by: 'Fidoman',
+      created_at: moment('Sun Mar 15 2015 15:06:59 GMT-0700 (PDT)').fromNow(),
+    },
+
+    {
+      title: 'Uber for ferrets',
+      text: 'Imagine a world where ferrets can roam free and never have to walk again! Introducting Uber for ferrets. The doggiest uber ever. Seriously, we\'re talking pickups for pooches. Cabs for canines. Man\'s best friend will be able to follow him around anywhere. How amazing would that be? You go out for a jog, and then BOOM there\'s little Kibbler, head hanging out the back of a yellow cab, tongue lolling and spittle drooling down the door. Just watching you.',
+      votes: 123,
+      created_by: 'Fidoman',
+      created_at: moment('Sun Mar 15 2015 15:06:59 GMT-0700 (PDT)').fromNow(),
+    },
+
+    {
+      title: 'Uber for babies',
+      text: 'Imagine a world where babies can roam free and never have to walk again! Introducting Uber for babies. The doggiest uber ever. Seriously, we\'re talking pickups for pooches. Cabs for canines. Man\'s best friend will be able to follow him around anywhere. How amazing would that be? You go out for a jog, and then BOOM there\'s little Kibbler, head hanging out the back of a yellow cab, tongue lolling and spittle drooling down the door. Just watching you.',
+      votes: 4423,
+      created_by: 'Fidoman',
+      created_at: moment('Sun Mar 15 2015 15:06:59 GMT-0700 (PDT)').fromNow(),
     }
   ];
 
