@@ -73,6 +73,12 @@ describe('', function() {
       });
     });
 
+    afterEach(function(done) {
+        Idea.remove({}, function() {
+          done();
+        });
+    });
+
     it('Responds with the stored idea', function(done) {
       request(app)
         .get('/api/ideas')
