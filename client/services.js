@@ -10,7 +10,7 @@ glintServices.factory('Votes', function($http){
       data: newVoteCount
     })
     .then(function(data){return data; })
-    .catch(function(err) {
+    .catch(function(error) {
       console.error('updateVotes error', error);
     });
   };
@@ -24,14 +24,28 @@ glintServices.factory('Ideas', function($http){
     return $http({
       method: 'GET',
       url: '/api/ideas' // db GET path here
-    }).then(function(resp){
-      return resp.data;
+    }).then(function(response){
+      return response.data;
     }).catch(function(error) {
       console.error('getIdeas error', error);
     });
   };
+
+  var createIdea = function(idea){
+    return $http({
+      method: 'POST',
+      url: '/api/ideas',
+      data: idea
+    }).then(function (response){
+      return response.data;
+    }).catch(function(error) {
+      console.error('createIdeas error', error);
+    });
+  };
+
   return {
-    getIdeas : getIdeas
+    getIdeas: getIdeas,
+    createIdea: createIdea
   };
 });
 
