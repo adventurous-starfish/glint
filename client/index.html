@@ -25,7 +25,7 @@
     <h1>What's your great idea?</h1>
     <form class="navbar-form navbar-middle" ng-submit="submit.submitIdea()" ng-controller="SubmitIdeaCtrl as submit">
       <div class="form-group">
-        <input type="text" class="form-control" placeholder="Enter idea here" ng-model="submit.ideaEntry">
+        <input name="idea-input" type="text" class="form-control" placeholder="Enter idea here" ng-model="submit.ideaEntry" required>
       </div>
       <button type="submit" class="btn btn-default">Submit</button>
     </form>
@@ -62,6 +62,7 @@
   </div>
 
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.12/angular.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.2/underscore-min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment.min.js"></script>
   <script src="glint.js"></script>
   <script src="services.js"></script>
