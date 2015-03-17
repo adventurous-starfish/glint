@@ -1,4 +1,4 @@
-var glintServices = angular.module('glint.services', [])
+var glintServices = angular.module('glint.services', []);
 
 glintServices.factory('Votes', function($http){
 
@@ -9,11 +9,24 @@ glintServices.factory('Votes', function($http){
       url: '', // db POST path here
       data: newVoteCount
     })
-    .then(function(data){return data })
+    .then(function(data){return data; })
     .catch(function(err) {
-      console.err("updateVotes error", err);
+      console.error('updateVotes error', error);
     });
 
+  };
+});
+
+glintServices.factory('Ideas', function($http){
+  var getIdeas = function(){
+    return $http({
+      method: 'GET',
+      url: '' // db GET path here
+    }).then(function(resp){
+      return resp.data;
+    }).catch(function(error) {
+      console.error('getIdeas error', error);
+    });
   };
 });
 

@@ -14,15 +14,23 @@ app.controller('MainCtrl', function(){
     },
     {
       title: 'Uber for dogs',
-      text: 'Imagine a world where dogs can roam free and never have to walk again! Introducting Uber for cats.',
+      text: 'Imagine a world where dogs can roam free and never have to walk again! Introducting Uber for dogs. The doggiest uber ever. Seriously, we\'re talking pickups for pooches. Cabs for canines. Man\'s best friend will be able to follow him around anywhere. How amazing would that be? You go out for a jog, and then BOOM there\'s little Kibbler, head hanging out the back of a yellow cab, tongue lolling and spittle drooling down the door. Just watching you.',
       votes: 654,
-      created_by: 'Super Fido',
+      created_by: 'Fidoman',
       created_at: moment('Sun Mar 15 2015 15:06:59 GMT-0700 (PDT)').fromNow(),
     }
   ];
 
-  // db GET request
-  self.getIdeas = function(){};
+  // db GET request moves to factory
+  self.getIdeas = function(){
+    Ideas.getIdeas()
+      .then(function(data){
+        // 
+      })
+      .catch(function(error){
+        console.error('getIdeas error', error);
+      });
+  };
 
 });
 
@@ -56,7 +64,7 @@ app.controller('VotesCtrl', function(){
 
     //   })
     //   .catch(function(error){
-
+    //     console.error('upvote error', error);
     //   });
   };
 
