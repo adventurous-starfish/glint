@@ -46,7 +46,7 @@
       <div class="col-md-8">
         <div class="idea-wrapper">
           <h3 class="idea-title">{{ idea.title }}</h3>
-          <h5 class="idea-description">{{ idea.text | limitTo: 160 }}{{ idea.text.length > 160 ? '...' : ''}}</h5>
+          <h5 class="idea-description">{{ idea.text | limitTo: 130 }}{{ idea.text.length > 130 ? '...' : ''}}</h5>
           <p class="timestamp-author">Submitted {{ idea.created_at }} by {{ idea.created_by }}</p>
         </div>
       </div>
