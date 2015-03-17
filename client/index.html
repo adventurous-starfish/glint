@@ -33,7 +33,7 @@
   
 
   <!-- Idea Row -->
-  <div class="row idea-post" ng-repeat="idea in mctrl.ideas"> 
+  <div class="row idea-post" ng-repeat="idea in mctrl.ideas | orderBy: '-votes'"> 
     <div class="col-md-1">
     </div>
 
