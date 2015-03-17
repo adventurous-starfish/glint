@@ -10,14 +10,14 @@ app.controller('MainCtrl', function(){
       text: 'Imagine a world where cats can roam free and never have to walk again! Introducting Uber for cats.',
       votes: 134,
       created_by: 'Super Tom',
-      created_at: 'Mon Mar 16 2015 14:46:59 GMT-0700 (PDT)',
+      created_at: moment('Mon Mar 16 2015 14:46:59 GMT-0700 (PDT)').fromNow(),
     },
     {
       title: 'Uber for dogs',
       text: 'Imagine a world where dogs can roam free and never have to walk again! Introducting Uber for cats.',
       votes: 654,
       created_by: 'Super Fido',
-      created_at: 'Sun Mar 15 2015 15:06:59 GMT-0700 (PDT)',
+      created_at: moment('Sun Mar 15 2015 15:06:59 GMT-0700 (PDT)').fromNow(),
     }
   ];
 
