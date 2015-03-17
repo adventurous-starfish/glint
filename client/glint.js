@@ -61,9 +61,12 @@ app.controller('SubmitIdeaCtrl', function(Ideas){
 	self.submitIdea = function(){
     // escape to handle XSS injection
     var escapedIdea = _.escape(self.ideaTitle);
+    var idea = JSON.stringify({
+      title: escapedIdea
+    });
 
     // call factory POST request to CREATE idea in db
-    Ideas.createIdea(escapedIdea)
+    Ideas.createIdea(idea)
       .then(function(response){
         console.log('createIdea success', response);
       })
