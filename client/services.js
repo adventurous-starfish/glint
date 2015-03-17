@@ -6,7 +6,7 @@ glintServices.factory('Votes', function($http){
   var updateVotes = function(newVoteCount){
     return $http({
       method: 'POST',
-      url: '', // db POST path here
+      url: '/api/ideas', // db POST path here
       data: newVoteCount
     })
     .then(function(data){return data; })
@@ -15,18 +15,26 @@ glintServices.factory('Votes', function($http){
     });
 
   };
+  return {
+    updateVotes : updateVotes
+  };
 });
 
 glintServices.factory('Ideas', function($http){
   var getIdeas = function(){
     return $http({
       method: 'GET',
-      url: '' // db GET path here
+      url: '/api/ideas' // db GET path here
     }).then(function(resp){
       return resp.data;
     }).catch(function(error) {
       console.error('getIdeas error', error);
     });
   };
+  return {
+    getIdeas : getIdeas
+  };
 });
+
+
 

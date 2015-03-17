@@ -47,13 +47,7 @@ app.controller('MainCtrl', function(){
 
   // db GET request moves to factory
   self.getIdeas = function(){
-    Ideas.getIdeas()
-      .then(function(data){
-        
-      })
-      .catch(function(error){
-        console.error('getIdeas error', error);
-      });
+    self.ideas.push(Ideas.getIdeas());
   };
 
 });
@@ -61,6 +55,7 @@ app.controller('MainCtrl', function(){
 app.controller('SubmitIdeaCtrl', function(){
   var self = this;
   var list = [];
+  })
 
   // db POST request
   // remember to escape input
