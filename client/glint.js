@@ -55,7 +55,6 @@ app.controller('MainCtrl', function(){
 app.controller('SubmitIdeaCtrl', function(){
   var self = this;
   var list = [];
-  })
 
   // db POST request
   // remember to escape input
