@@ -9,7 +9,7 @@
   <link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
 </head>
 
-<body ng-app="glint" ng-controller="MainCtrl as mctrl">
+<body ng-app="glint">
   <div class="container-fluid nav-bar-custom">
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
@@ -23,9 +23,9 @@
   </div>
   <div class="jumbotron jumbo-top">
     <h1>What's your great idea?</h1>
-    <form class="navbar-form navbar-middle" ng-submit="submit.submitIdea()" ng-controller="SubmitIdeaCtrl as submit">
+    <form class="navbar-form navbar-middle" ng-submit="ictrl.submitIdea()" ng-controller="IdeasCtrl as ictrl">
       <div class="form-group">
-        <input name="idea-input" type="text" class="form-control" placeholder="Enter idea here" ng-model="submit.ideaTitle" required>
+        <input name="idea-input" type="text" class="form-control" placeholder="Enter idea here" ng-model="ictrl.ideaTitle" required>
       </div>
       <button type="submit" class="btn btn-default">Submit</button>
     </form>
@@ -33,7 +33,7 @@
   
 
   <!-- Idea Row -->
-  <div class="row idea-post" ng-repeat="idea in mctrl.ideas | orderBy: '-votes'"> 
+  <div class="row idea-post"  ng-controller="IdeasCtrl as ictrl" ng-repeat="idea in ictrl.ideas | orderBy: '-votes'"> 
     <div class="col-md-1">
     </div>
 

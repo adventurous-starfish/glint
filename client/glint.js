@@ -1,50 +1,7 @@
 var app = angular.module('glint', ['glint.services']);
 
-app.controller('MainCtrl', function(){
+app.controller('IdeasCtrl', function(Ideas){
   var self = this;
-
-  // // mocked up data for now
-  // self.ideas = [
-  //   {
-  //     title: 'Uber for cats',
-  //     text: 'Imagine a world where cats can roam free and never have to walk again! Introducting Uber for cats.',
-  //     votes: 134,
-  //     created_by: 'Super Tom',
-  //     created_at: moment('Mon Mar 16 2015 14:46:59 GMT-0700 (PDT)').fromNow(),
-  //   },
-  //   {
-  //     title: 'Uber for dogs',
-  //     text: 'Imagine a world where dogs can roam free and never have to walk again! Introducting Uber for dogs. The doggiest uber ever. Seriously, we\'re talking pickups for pooches. Cabs for canines. Man\'s best friend will be able to follow him around anywhere. How amazing would that be? You go out for a jog, and then BOOM there\'s little Kibbler, head hanging out the back of a yellow cab, tongue lolling and spittle drooling down the door. Just watching you.',
-  //     votes: 654,
-  //     created_by: 'Fidoman',
-  //     created_at: moment('Sun Mar 15 2015 15:06:59 GMT-0700 (PDT)').fromNow(),
-  //   },
-
-  //   {
-  //     title: 'Uber for meerkats',
-  //     text: 'Imagine a world where meerkats can roam free and never have to walk again! Introducting Uber for meerkats. The doggiest uber ever. Seriously, we\'re talking pickups for pooches. Cabs for canines. Man\'s best friend will be able to follow him around anywhere. How amazing would that be? You go out for a jog, and then BOOM there\'s little Kibbler, head hanging out the back of a yellow cab, tongue lolling and spittle drooling down the door. Just watching you.',
-  //     votes: 512,
-  //     created_by: 'Fidoman',
-  //     created_at: moment('Sun Mar 15 2015 15:06:59 GMT-0700 (PDT)').fromNow(),
-  //   },
-
-  //   {
-  //     title: 'Uber for ferrets',
-  //     text: 'Imagine a world where ferrets can roam free and never have to walk again! Introducting Uber for ferrets. The doggiest uber ever. Seriously, we\'re talking pickups for pooches. Cabs for canines. Man\'s best friend will be able to follow him around anywhere. How amazing would that be? You go out for a jog, and then BOOM there\'s little Kibbler, head hanging out the back of a yellow cab, tongue lolling and spittle drooling down the door. Just watching you.',
-  //     votes: 123,
-  //     created_by: 'Fidoman',
-  //     created_at: moment('Sun Mar 15 2015 15:06:59 GMT-0700 (PDT)').fromNow(),
-  //   },
-
-  //   {
-  //     title: 'Uber for babies',
-  //     text: 'Imagine a world where babies can roam free and never have to walk again! Introducting Uber for babies. The doggiest uber ever. Seriously, we\'re talking pickups for pooches. Cabs for canines. Man\'s best friend will be able to follow him around anywhere. How amazing would that be? You go out for a jog, and then BOOM there\'s little Kibbler, head hanging out the back of a yellow cab, tongue lolling and spittle drooling down the door. Just watching you.',
-  //     votes: 4423,
-  //     created_by: 'Fidoman',
-  //     created_at: moment('Sun Mar 15 2015 15:06:59 GMT-0700 (PDT)').fromNow(),
-  //   }
-  // ];
-
   self.data = { ideas: [] };
 
   // db GET request moves to factory
@@ -52,13 +9,8 @@ app.controller('MainCtrl', function(){
     self.ideas.push(Ideas.getIdeas());
   };
 
-});
-
-app.controller('SubmitIdeaCtrl', function(Ideas){
-  var self = this;
-
   // submitIdea is called when submit button is clicked
-	self.submitIdea = function(){
+  self.submitIdea = function(){
     // escape to handle XSS injection
     var escapedIdea = _.escape(self.ideaTitle);
     var idea = JSON.stringify({
@@ -69,6 +21,7 @@ app.controller('SubmitIdeaCtrl', function(Ideas){
     Ideas.createIdea(idea)
       .then(function(response){
         console.log('createIdea success', response);
+
       })
       .catch(function(error){
         console.error('createIdea error', error);
