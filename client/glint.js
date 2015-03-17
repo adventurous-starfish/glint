@@ -49,7 +49,7 @@ app.controller('MainCtrl', function(){
   self.getIdeas = function(){
     Ideas.getIdeas()
       .then(function(data){
-        // 
+        
       })
       .catch(function(error){
         console.error('getIdeas error', error);
@@ -66,7 +66,9 @@ app.controller('SubmitIdeaCtrl', function(){
   // remember to escape input
   // submitIdea is called when submit button is clicked
 	self.submitIdea = function(){
-    window.alert(self.ideaEntry);
+    // escape to handle XSS injection
+    var escapedIdea = _.escape(self.ideaEntry);
+    window.alert(escapedIdea);
     // list.push(self.ideaEntry);
   };
 
