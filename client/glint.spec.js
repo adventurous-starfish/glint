@@ -13,10 +13,6 @@ describe('MainCtrl', function(){
     });
   }));
 
-  it('should have an ideas property on the controller', function(){
-    expect(ctrl).to.have.property('ideas');
-  });
-
   it('should have a getIdeas function', function(){
     expect(ctrl.getIdeas).to.be.a('function');
   });
