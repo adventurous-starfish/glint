@@ -8,9 +8,10 @@ var app = angular.module('glint', ['glint.services'])
 app.controller('IdeasCtrl', function(Ideas){
   var self = this;
   self.data = { ideas: [] };
+  self.idea = {};
   self.postSuccess = false;
 
-  // db GET request moves to factory
+  // display all ideas currently in db
   self.displayIdeas = function(){
     Ideas.getIdeas()
       .then(function(results){
@@ -21,21 +22,17 @@ app.controller('IdeasCtrl', function(Ideas){
       });
   };
 
-  // submitIdea is called when submit button is clicked
+  // submit new Idea
   self.submitIdea = function(){
     // escape to handle XSS injection
-    var escapedIdea = _.escape(self.ideaTitle);
-    var idea = JSON.stringify({
-      title: escapedIdea
-    });
+    _.escape(self.idea.title);
+    var idea = JSON.stringify(self.idea);
 
-    // call factory POST request to CREATE idea in db
+    // POST new idea, display confirmation, redisplay all ideas
     Ideas.createIdea(idea)
       .then(function(response){
-        // display something to user to confirm post
         self.postSuccess = true;
-        // redisplay all ideas
-        self.displayIdeas();
+        // self.displayIdeas();
       })
       .catch(function(error){
         console.error('createIdea error', error);

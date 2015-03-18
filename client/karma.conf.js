@@ -20,6 +20,7 @@ module.exports = function(config) {
       'bower_components/angular-route/angular-route.js',
       'bower_components/angular-mocks/angular-mocks.js',
       'https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment.min.js',
+      'https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.2/underscore-min.js',
 
       // app code & spec files
       '*.js'
