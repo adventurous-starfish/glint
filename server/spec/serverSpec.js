@@ -1,7 +1,7 @@
 var expect = require('chai').expect;
 var request = require('supertest');
-var app = require('../server.js').app;
-var db = require('../server.js').db;
+var app = require('../serverSetup.js').app;
+var db = require('../serverSetup.js').db;
 var Idea = require('../ideas/ideaModel');
 
 describe('', function() {
