@@ -5,6 +5,7 @@ var morgan = require('morgan'); // logs requests
 module.exports = function (app, express) {
   // add more routes later 
   var ideaRouter = express.Router();
+  var voteRouter = express.Router();
 
   app.use(bodyParser.urlencoded({extended: true}));
   app.use(bodyParser.json());
@@ -13,10 +14,12 @@ module.exports = function (app, express) {
 
 
   app.use('/api/ideas', ideaRouter); // use idea router for all idea requests
+  app.use('/api/votes', voteRouter); // use vote router for requests related to upvoting or downvoting
 
   app.use(helpers.logErrors);
   app.use(helpers.handleErrors);
 
-  // inject our router into its route file
+  // inject our routers into their route file
   require('../ideas/ideaRoutes.js')(ideaRouter);
+  require('../votes/voteRoutes.js')(voteRouter);
 };

@@ -4,7 +4,8 @@ var mongoose = require('mongoose');
 var app = express();
 
 // get the correct MongoDB connection depending on the environment
-mongoURI = process.env.CUSTOMCONNSTR_MONGOLAB_URI || 'mongodb://localhost:27017/glint';
+// mongoURI = process.env.CUSTOMCONNSTR_MONGOLAB_URI || 'mongodb://localhost:27017/glint';
+mongoURI = 'mongodb://localhost:27017/glint'
 mongoose.connect(mongoURI);
 
 var db = mongoose.connection;
