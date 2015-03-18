@@ -32,20 +32,20 @@
   </div>
   
   <!-- User Feedback Message Area -->
-  <div class="user-feedback-container" ng-show="ictrl.postSuccess">
+  <div class="user-feedback-container ng-cloak" ng-show="ictrl.postSuccess">
     <span class="post-idea-success" ng-click="ictrl.postSuccess = !ictrl.postSuccess">Your idea has been posted.</span>
   </div>
 
   <!-- Idea Row -->
-  <div class="row idea-post" ng-repeat="idea in ictrl.data.ideas | orderBy: '-votes'"> 
+  <div class="row idea-post ng-cloak" ng-repeat="idea in ictrl.data.ideas | orderBy: '-votes'"> 
     <div class="col-md-1">
     </div>
 
     <div class="idea-container">
       <div class="col-md-1 upvote-downvote-wrapper" ng-controller="VotesCtrl as vctrl">
-        <i class="fa fa-sort-asc" ng-click="vctrl.upvote()"></i> <!-- upvote -->
+        <i class="fa fa-sort-asc" ng-click="vctrl.upvote(idea)"></i> <!-- upvote -->
         <div class="vote-points">{{ idea.votes }}</div>
-        <i class="fa fa-sort-desc" ng-click="vctrl.downvote()"></i> <!-- downvote -->
+        <i class="fa fa-sort-desc" ng-click="vctrl.downvote(idea)"></i> <!-- downvote -->
       </div>
       <div class="col-md-8">
         <div class="idea-wrapper">
