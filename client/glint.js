@@ -1,4 +1,9 @@
-var app = angular.module('glint', ['glint.services']);
+var app = angular.module('glint', ['glint.services'])
+  .filter('moment', function() {
+    return function(dateString) {
+        return moment(dateString).fromNow();
+    };
+  });
 
 app.controller('IdeasCtrl', function(Ideas){
   var self = this;
