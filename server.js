@@ -1,4 +1,4 @@
-var app = require('./server/server.js').app;
+var app = require('./server/serverSetup.js').app;
 
 var port = process.env.PORT || 8000;
 
