@@ -8,14 +8,13 @@ var app = angular.module('glint', ['glint.services'])
 app.controller('IdeasCtrl', function(Ideas){
   var self = this;
   self.data = { ideas: [] };
+  self.postSuccess = false;
 
   // db GET request moves to factory
   self.displayIdeas = function(){
     Ideas.getIdeas()
       .then(function(results){
-        console.log('displayIdeas success', results);
         self.data.ideas = results;
-        console.log('data.ideas', self.data.ideas);
       })
       .catch(function(error){
         console.error('displayIdeas error', error);
@@ -33,8 +32,9 @@ app.controller('IdeasCtrl', function(Ideas){
     // call factory POST request to CREATE idea in db
     Ideas.createIdea(idea)
       .then(function(response){
-        console.log('createIdea success', response);
-        // will need to display something to user to confirm post
+        // display something to user to confirm post
+        self.postSuccess = true;
+        // redisplay all ideas
         self.displayIdeas();
       })
       .catch(function(error){

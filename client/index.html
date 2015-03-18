@@ -31,6 +31,10 @@
     </form>
   </div>
   
+  <!-- User Feedback Message Area -->
+  <div class="user-feedback-container" ng-show="ictrl.postSuccess">
+    <span class="post-idea-success" ng-click="ictrl.postSuccess = !ictrl.postSuccess">Your idea has been posted.</span>
+  </div>
 
   <!-- Idea Row -->
   <div class="row idea-post" ng-repeat="idea in ictrl.data.ideas | orderBy: '-votes'"> 
