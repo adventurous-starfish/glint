@@ -32,6 +32,7 @@ body {
 .jumbo-top {
 	text-align: center;
   margin-bottom: 0 !important;
+  background-image: url('../assets/blackboard-background.png');
 }
 
 .jumbo-top h1 {
