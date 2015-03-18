@@ -32,7 +32,7 @@ app.controller('IdeasCtrl', function(Ideas){
     Ideas.createIdea(idea)
       .then(function(response){
         self.postSuccess = true;
-        // self.displayIdeas();
+        self.displayIdeas();
       })
       .catch(function(error){
         console.error('createIdea error', error);

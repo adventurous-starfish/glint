@@ -56,6 +56,7 @@ describe('IdeasCtrl', function(){
       var mockIdeas = [{}, {}, {}];
       $httpBackend.expectGET("/api/ideas").respond(mockIdeas);
       $httpBackend.expectPOST("/api/ideas").respond(200, '');
+      $httpBackend.expectGET("/api/ideas").respond(mockIdeas);
       ctrl.submitIdea();
       $httpBackend.flush();
     });
