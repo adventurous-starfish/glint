@@ -1,11 +1,11 @@
 var app = angular.module('glint', ['glint.services'])
-  .filter('moment', function() {
-    return function(dateString) {
+  .filter('moment', function () {
+    return function (dateString) {
         return moment(dateString).fromNow();
     };
   });
 
-app.controller('IdeasCtrl', function(Ideas){
+app.controller('IdeasCtrl', function (Ideas){
   var self = this;
   self.data = { ideas: [] };
   self.idea = {};
@@ -14,27 +14,28 @@ app.controller('IdeasCtrl', function(Ideas){
   // display all ideas currently in db
   self.displayIdeas = function(){
     Ideas.getIdeas()
-      .then(function(results){
+      .then(function (results){
+        console.log('ideas', results[0]);
         self.data.ideas = results;
       })
-      .catch(function(error){
+      .catch(function (error){
         console.error('displayIdeas error', error);
       });
   };
 
   // submit new Idea
-  self.submitIdea = function(){
+  self.submitIdea = function (){
     // escape to handle XSS injection
     _.escape(self.idea.title);
     var idea = JSON.stringify(self.idea);
 
     // POST new idea, display confirmation, redisplay all ideas
     Ideas.createIdea(idea)
-      .then(function(response){
+      .then(function (response){
         self.postSuccess = true;
         self.displayIdeas();
       })
-      .catch(function(error){
+      .catch(function (error){
         console.error('createIdea error', error);
       });
   };
@@ -52,21 +53,30 @@ app.controller('VotesCtrl', function(){
   //      this may be confusing for user who sees the # go up/down lots
   //   2) doing this simply increments only by user added vote, keeping
   //      the results more like what user expects
-  self.upvote = function(){
-    console.log('upvote');
-    // Votes.updateVote()
-    //   .then(function(response){
-
-    //   })
-    //   .catch(function(error){
-    //     console.error('upvote error', error);
-    //   });
+  self.upvote = function(idea){
+    // console.log('upvote');
+    voteCount = idea.votes++;
+    id = idea._id;
+    Votes.updateVote(voteCount, id) // pass in new vote count
+      .then(function (response){
+        console.log('upvote success', response);
+      })
+      .catch(function (error){
+        console.error('upvote error', error);
+      });
   };
 
-  // if results handling here is different from upvote, then
-  // specify difference here. Otherwise, remove.
-  self.downvote = function(){
-    console.log('downvote');
+  self.downvote = function(idea){
+    // console.log('downvote');
+    voteCount = idea.votes--;
+    id = idea._id;
+    Votes.updateVote(voteCount, id)
+      .then(function (response){
+        console.log('downvote success', response);
+      })
+      .catch(function (error){
+        console.error('downvote error', error);
+      });
   };
 
 });

@@ -65,11 +65,19 @@ describe('IdeasCtrl', function(){
 
 describe('VotesCtrl', function(){
   beforeEach(module('glint'));
+  var $rootScope;
   var scope;
   var ctrl;
+  var $httpBackend;
+  var $controller;
+  var Votes;
 
   beforeEach(inject(function($rootScope, $controller) {
+    $rootScope = $injector.get('$rootScope');
     scope = $rootScope.$new();
+    $httpBackend = $injector.get('$httpBackend');
+    Votes = $injector.get('Votes');
+    $controller = $injector.get('$controller');
     ctrl = $controller('VotesCtrl', {
       self: scope,
     });
