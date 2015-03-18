@@ -6,7 +6,7 @@ glintServices.factory('Votes', function($http){
   var updateVotes = function(newVoteCount){
     return $http({
       method: 'POST',
-      url: '/api/ideas',
+      url: '/api/votes',
       data: newVoteCount
     })
     .then(function(data){return data; })

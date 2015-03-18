@@ -106,3 +106,12 @@ i.fa-comments:active {
   margin-bottom: 0;
 }
 
+.user-feedback-container {
+  background-color: #FFFFC2;
+  text-align: center;
+  padding: 0.5em 0;
+  color: red;
+}
+.user-feedback-container:hover {
+  cursor: pointer;
+}
