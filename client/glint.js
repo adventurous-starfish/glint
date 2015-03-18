@@ -15,7 +15,6 @@ app.controller('IdeasCtrl', function (Ideas){
   self.displayIdeas = function(){
     Ideas.getIdeas()
       .then(function (results){
-        console.log('ideas', results[0]);
         self.data.ideas = results;
       })
       .catch(function (error){
@@ -44,7 +43,7 @@ app.controller('IdeasCtrl', function (Ideas){
 
 });
 
-app.controller('VotesCtrl', function(){
+app.controller('VotesCtrl', function(Votes){
   var self = this;
 
   // call factory db POST function, and handle results
@@ -57,7 +56,7 @@ app.controller('VotesCtrl', function(){
     // console.log('upvote');
     voteCount = idea.votes++;
     id = idea._id;
-    Votes.updateVote(voteCount, id) // pass in new vote count
+    Votes.updateVotes(voteCount, id) // pass in new vote count
       .then(function (response){
         console.log('upvote success', response);
       })
@@ -70,7 +69,7 @@ app.controller('VotesCtrl', function(){
     // console.log('downvote');
     voteCount = idea.votes--;
     id = idea._id;
-    Votes.updateVote(voteCount, id)
+    Votes.updateVotes(voteCount, id)
       .then(function (response){
         console.log('downvote success', response);
       })

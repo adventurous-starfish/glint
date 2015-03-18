@@ -37,7 +37,7 @@ glintServices.factory('Votes', function($http){
     return $http({
       method: 'PUT',
       url: '/api/votes/:' + idea_id,
-      data: VoteCount
+      data: voteCount
     })
     .then(function (response){
       return response.data;
