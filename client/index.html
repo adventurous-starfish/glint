@@ -23,18 +23,19 @@
   </div>
   <div class="jumbotron jumbo-top">
     <h1>What's your great idea?</h1>
-    <form class="navbar-form navbar-middle" ng-submit="ictrl.submitIdea()">
+    <form name="ideaForm" class="navbar-form navbar-middle" ng-submit="ictrl.submitIdea()" novalidate>
       <div class="form-group">
-        <input name="idea-input" type="text" class="form-control" placeholder="Enter idea here" ng-model="ictrl.ideaTitle" required>
+        <input name="ideaInput" type="text" class="form-control" placeholder="Enter idea here" ng-model="ictrl.ideaTitle" required>
       </div>
       <button type="submit" class="btn btn-default">Submit</button>
+      <div class="show-on-error" ng-show="ideaForm.$invalid && ictrl.submitted">Please enter an idea</div>
     </form>
   </div>
   
   <!-- User Feedback Message Area -->
-  <div class="user-feedback-container" ng-show="ictrl.postSuccess">
+  <!-- <div class="user-feedback-container" ng-show="ictrl.postSuccess">
     <span class="post-idea-success" ng-click="ictrl.postSuccess = !ictrl.postSuccess">Your idea has been posted.</span>
-  </div>
+  </div> -->
 
   <!-- Idea Row -->
   <div class="row idea-post" ng-repeat="idea in ictrl.data.ideas | orderBy: '-votes'"> 

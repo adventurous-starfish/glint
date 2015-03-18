@@ -14,7 +14,7 @@ app.controller('IdeasCtrl', function(Ideas){
   self.displayIdeas = function(){
     Ideas.getIdeas()
       .then(function(results){
-        self.data.ideas = results;
+        // self.data.ideas = results;
       })
       .catch(function(error){
         console.error('displayIdeas error', error);
@@ -23,6 +23,7 @@ app.controller('IdeasCtrl', function(Ideas){
 
   // submitIdea is called when submit button is clicked
   self.submitIdea = function(){
+    self.submitted = true;
     // escape to handle XSS injection
     var escapedIdea = _.escape(self.ideaTitle);
     var idea = JSON.stringify({
