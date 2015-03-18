@@ -181,3 +181,16 @@ img.logo-large {
 .sign-up-here {
   margin-top: 10px;
 }
+
+.tagline {
+  padding: 15px 15px 15px 10px;
+}
+
+a.glint-logo-icon {
+  display: inline !important;
+  padding: 0 !important;
+}
+
+a.glint-logo-icon:hover{
+  background-color: rgba(0,0,0,0) !important;
+}
