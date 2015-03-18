@@ -115,3 +115,7 @@ i.fa-comments:active {
 .user-feedback-container:hover {
   cursor: pointer;
 }
+
+.show-on-error {
+  height: 0;
+}
