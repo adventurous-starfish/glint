@@ -30,10 +30,18 @@
   <div class="jumbotron jumbo-top">
     <h1>What's your great idea?</h1>
     <form class="navbar-form navbar-middle" ng-submit="ictrl.submitIdea()">
-      <div class="form-group">
-        <input name="idea-input" type="text" class="form-control" placeholder="Enter idea here" ng-model="ictrl.idea.title" required>
+
+      <!-- Enter Idea -->
+      <div class="form-idea">
+        <input name="idea-input" type="text" class="form-control form-title-control" placeholder="Enter idea here" ng-model="ictrl.idea.title" required>
       </div>
-      <button type="submit" class="btn btn-default">Submit</button>
+      
+      <!-- Enter Description -->
+      <div ng-if="ictrl.submitted" class="form-description ng-cloak">
+        <textarea name="description-input" rows="3" class="form-control form-description-control" placeholder="Enter description here" ng-model="ictrl.idea.text"></textarea>
+      </div>
+
+      <button type="submit" class="btn btn-default idea-submit-button">Submit</button>
     </form>
   </div>
   
