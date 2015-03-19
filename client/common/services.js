@@ -35,8 +35,8 @@ glintServices.factory('Votes', function($http){
   // POST
   var upvote = function(idea){
     return $http({
-      method: 'PUT',
-      url: '/api/votes/upvote',
+      method: 'POST',
+      url: '/api/vote/upvote',
       data: idea
     })
     .then(function (response){
@@ -49,8 +49,8 @@ glintServices.factory('Votes', function($http){
 
   var downvote = function(idea){
     return $http({
-      method: 'PUT',
-      url: '/api/votes/downvote',
+      method: 'POST',
+      url: '/api/vote/downvote',
       data: idea
     })
     .then(function (response){

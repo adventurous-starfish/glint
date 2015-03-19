@@ -14,7 +14,7 @@ module.exports = function (app, express) {
 
 
   app.use('/api/ideas', ideaRouter); // use idea router for all idea requests
-  app.use('/api/votes', voteRouter); // use vote router for requests related to upvoting or downvoting
+  app.use('/api/vote', voteRouter); // use vote router for requests related to upvoting or downvoting
 
   app.use(helpers.logErrors);
   app.use(helpers.handleErrors);
