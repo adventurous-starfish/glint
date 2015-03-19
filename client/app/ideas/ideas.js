@@ -1,5 +1,5 @@
 angular.module('glint.ideas', [])
-.controller('IdeasCtrl', function (Ideas){
+.controller('IdeasCtrl', function (Ideas, $filter){
   var self = this;
   self.data = { ideas: [] };
   self.idea = {};
@@ -10,6 +10,7 @@ angular.module('glint.ideas', [])
   self.displayIdeas = function(){
     Ideas.getIdeas()
       .then(function (results){
+        results = $filter('orderBy')(results, 'votes', true);
         self.data.ideas = results;
       })
       .catch(function (error){
