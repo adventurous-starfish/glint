@@ -1,5 +1,5 @@
 angular.module('glint.ideas', [])
-.controller('IdeasCtrl', function (Ideas){
+.controller('IdeasCtrl', function (Ideas, $filter){
   var self = this;
   self.data = { ideas: [] };
   self.idea = {};
@@ -10,6 +10,7 @@ angular.module('glint.ideas', [])
   self.displayIdeas = function(){
     Ideas.getIdeas()
       .then(function (results){
+        results = $filter('orderBy')(results, 'votes', true);
         self.data.ideas = results;
       })
       .catch(function (error){
@@ -33,15 +34,17 @@ angular.module('glint.ideas', [])
     // POST new idea, display confirmation, redisplay all ideas
     Ideas.createIdea(idea)
       .then(function (response){
+        // show user feedback
         self.postSuccess = true;
+        // hide idea description field
+        self.submitted = false;
+        // clear form field2
+        self.idea = {};
         self.displayIdeas();
       })
       .catch(function (error){
         console.error('createIdea error', error);
       });
-
-      // hide description box after submit
-      // self.submitted = false;
     }
   };
 
