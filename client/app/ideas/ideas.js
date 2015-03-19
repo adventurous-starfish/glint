@@ -34,15 +34,17 @@ angular.module('glint.ideas', [])
     // POST new idea, display confirmation, redisplay all ideas
     Ideas.createIdea(idea)
       .then(function (response){
+        // show user feedback
         self.postSuccess = true;
+        // hide idea description field
+        self.submitted = false;
+        // clear form field2
+        self.idea = {};
         self.displayIdeas();
       })
       .catch(function (error){
         console.error('createIdea error', error);
       });
-
-      // hide description box after submit
-      // self.submitted = false;
     }
   };
 
