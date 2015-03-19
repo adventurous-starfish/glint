@@ -5,9 +5,9 @@ module.exports = function (app) {
 
     // POST to upvote will increase the vote count by 1 in the database
     // POST to downvote will decrease the vote count by 1 in the database
-    app.route('/api/vote/upvote')
-      .post(voteController.upvote)
-    app.route('/api/vote/downvote')
+    app.route('/upvote')
+      .post(voteController.upvote);
+    app.route('/downvote')
       .post(voteController.downvote);
     // does this need a catch all fallback path and action?
 };

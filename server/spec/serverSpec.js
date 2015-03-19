@@ -91,4 +91,53 @@ describe('', function() {
     });
   });
 
+  describe('Change Vote Count: ', function() {
+
+    beforeEach(function(done) {
+      idea = new Idea({
+        title: 'Test Idea 1',
+        text: 'This is a test.'
+      });
+
+      idea.save(function() {
+        done();
+      });
+    });
+
+    afterEach(function(done) {
+        Idea.remove({}, function() {
+          done();
+        });
+    });
+
+    it('Upvote updates the vote count on the idea', function(done) {
+      request(app)
+        .post('/api/vote/upvote')
+        .send({
+          title: 'Test Idea 1',
+          text: 'This is a test.',
+        })
+        .expect(function(res) {
+          expect(res.body.title).to.equal('Test Idea 1');
+          expect(res.body.votes).to.equal(1);
+        })
+        .end(done);
+    });
+
+    it('Downvote updates the vote count on the idea', function(done) {
+      request(app)
+        .post('/api/vote/downvote')
+        .send({
+          title: 'Test Idea 1',
+          text: 'This is a test.',
+        })
+        .expect(function(res) {
+          expect(res.body.title).to.equal('Test Idea 1');
+          expect(res.body.votes).to.equal(-1);
+        })
+        .end(done);
+    });
+
+  });
+
 });

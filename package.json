@@ -6,7 +6,10 @@
   "repository": "",
   "license": "Proprietary",
   "private": false,
-  "scripts": {},
+  "scripts": {
+    "test": "npm run test-server",
+    "test-server": "mocha ./server/spec/serverSpec.js"
+    },
   "dependencies": {
     "body-parser": "^1.5.2",
     "chai": "^1.9.0",
