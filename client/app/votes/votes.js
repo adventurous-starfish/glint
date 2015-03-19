@@ -14,7 +14,7 @@ angular.module('glint.votes', [])
     // voteCount = idea.votes++;
     // id = idea._id;
 
-    JSON.stringify(idea);
+    idea = JSON.stringify(idea);
     Votes.upvote(idea)
       .then(function (response){
         console.log('upvote success', response);
@@ -30,7 +30,7 @@ angular.module('glint.votes', [])
     // voteCount = idea.votes--;
     // id = idea._id;
 
-    JSON.stringify(idea);
+    idea = JSON.stringify(idea);
     Votes.downvote(idea)
       .then(function (response){
         console.log('downvote success', response);
