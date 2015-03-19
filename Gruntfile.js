@@ -9,7 +9,12 @@ module.exports = function(grunt) {
         separator: ';'
       }, 
       dist: {
-        src: ['client/*.js'],
+        src: [
+        'client/app/glint.js',
+        'client/common/services.js',
+        'client/app/ideas/ideas.js',
+        'client/app/votes/votes.js'
+        ],
         dest: 'client/dist/build.min.js'
       }
     },
