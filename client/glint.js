@@ -27,7 +27,7 @@ app.controller('IdeasCtrl', function (Ideas){
     // escape to handle XSS injection
     _.escape(self.idea.title);
     var idea = JSON.stringify(self.idea);
-
+    
     // POST new idea, display confirmation, redisplay all ideas
     Ideas.createIdea(idea)
       .then(function (response){

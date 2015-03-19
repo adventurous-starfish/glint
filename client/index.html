@@ -10,17 +10,23 @@
 </head>
 
 <body ng-app="glint" ng-controller="IdeasCtrl as ictrl">
-  <div class="container-fluid nav-bar-custom">
+  <nav class="container-fluid nav-bar-custom">
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-left">
+        <li class="nav-logo">
+          <a class="glint-logo-icon" href="index.html"><img src="assets/glint-logo-small.png" alt=""></a>&nbsp;&nbsp;&nbsp;|</li>
+        <li class="tagline">Where programmers meet ideas</li>
+      </ul>
       <ul class="nav navbar-nav navbar-right">
         <li><a href="#">User</a></li>
         <li><a href="#">Messages</a></li>
         <li><a href="#">FAQ</a></li>
-        <li><a class ="login" href="#">Login</a></li>
+        <li><a class ="login" href="login.html">Login</a></li>
         <li><a href="#"><i class="fa fa-plus"></i></a></li>
       </ul>
     </div>
-  </div>
+  </nav>
+  
   <div class="jumbotron jumbo-top">
     <h1>What's your great idea?</h1>
     <form class="navbar-form navbar-middle" ng-submit="ictrl.submitIdea()">
