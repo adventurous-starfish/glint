@@ -33,20 +33,36 @@ glintServices.factory('Ideas', function ($http){
 glintServices.factory('Votes', function($http){
 
   // POST
-  var updateVotes = function(voteCount, idea_id){
+  var upvote = function(idea){
     return $http({
       method: 'PUT',
-      url: '/api/votes/:' + idea_id,
-      data: voteCount
+      url: '/api/votes/upvote',
+      data: idea
     })
     .then(function (response){
       return response.data;
     })
     .catch(function (error) {
-      console.error('updateVotes error', error);
+      console.error('upvote error', error);
     });
   };
+
+  var downvote = function(idea){
+    return $http({
+      method: 'PUT',
+      url: '/api/votes/downvote',
+      data: idea
+    })
+    .then(function (response){
+      return response.data;
+    })
+    .catch(function (error) {
+      console.error('downvote error', error);
+    });
+  };
+
   return {
-    updateVotes: updateVotes
+    upvote: upvote,
+    downvote: downvote
   };
 });
