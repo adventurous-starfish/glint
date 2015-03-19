@@ -26,7 +26,7 @@ describe('VotesCtrl', function(){
 
   it('should be able to increment & update an idea\'s votes with upvote()', function(){
     var mockIdea = JSON.stringify({ _id: '5508b3', votes: 5 });
-    $httpBackend.expectPUT("/api/votes/upvote").respond(200, '');
+    $httpBackend.expectPOST("/api/vote/upvote").respond(200, '');
     ctrl.upvote(mockIdea);
     $httpBackend.flush();
     // expect(mockIdea.votes).to.eql(6);
@@ -38,7 +38,7 @@ describe('VotesCtrl', function(){
 
   it('should be able to decrement & update an idea\'s votes with downvote()', function(){
     var mockIdea = JSON.stringify({ _id: '5508b3', votes: 5 });
-    $httpBackend.expectPUT("/api/votes/downvote").respond(200, '');
+    $httpBackend.expectPOST("/api/vote/downvote").respond(200, '');
     ctrl.downvote(mockIdea);
     $httpBackend.flush();
     // expect(mockIdea.votes).to.eql(4);
