@@ -209,16 +209,42 @@ a.glint-logo-icon:hover{
   background-color: rgba(0,0,0,0) !important;
 }
 
-.ng-hide-add, .ng-hide-remove {
-    /* ensure visibility during the transition */
-    display: block !important; /* yes, important */
+.ng-enter {
+  transition: 0.75s;
+  opacity: 0;
 }
 
-.cssSlideUp {
-    transition: .5s linear all;
-    height: 80px;
-    overflow: hidden;
+.ng-enter-active {
+  opacity: 1;
 }
-.cssSlideUp.ng-hide {
-    height:0;
+
+.ng-enter-stagger {
+  transition-delay: 0.2s;
+}
+
+.ng-leave {
+  transition: 0.75s;
+  opacity: 1;
+}
+
+.ng-leave-active {
+  opacity: 0;
+}
+
+.form-description.ng-enter {
+  transition: 0.75s;
+  height: 0px;
+}
+
+.form-description.ng-enter-active {
+  height: 73px;
+}
+
+.form-description.ng-leave {
+  transition: 0.75s;
+  height: 73px;
+}
+
+.form-description.ng-leave-active {
+  height: 0;
 }

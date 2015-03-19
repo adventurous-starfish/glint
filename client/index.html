@@ -6,6 +6,7 @@
   <link rel="stylesheet" href="styles/styles.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.5/animate.min.css">
   <link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
 </head>
 
@@ -28,11 +29,11 @@
   </nav>
   
   <div class="jumbotron jumbo-top">
-    <h1>What's your great idea?</h1>
+    <h1 class="animated fadeInUp">What's your great idea?</h1>
     <form class="navbar-form navbar-middle" ng-submit="ictrl.submitIdea()">
 
       <!-- Enter Idea -->
-      <div class="form-idea">
+      <div class="form-idea animated fadeInUp">
         <input name="idea-input" type="text" class="form-control form-title-control" placeholder="Enter idea here" ng-model="ictrl.idea.title" required>
       </div>
       
@@ -41,7 +42,7 @@
         <textarea name="description-input" rows="3" class="form-control form-description-control" placeholder="Enter description here" ng-model="ictrl.idea.text"></textarea>
       </div>
 
-      <button type="submit" class="btn btn-default idea-submit-button">Submit</button>
+      <button type="submit" class="btn btn-default idea-submit-button animated fadeInUp">Submit</button>
     </form>
   </div>
   
