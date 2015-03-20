@@ -68,7 +68,7 @@ glintServices.factory('Votes', function($http){
 });
 
 glintServices.factory('Auth', function($http){
-  
+
   var login = function (user){
     return $http({
       method: 'POST',

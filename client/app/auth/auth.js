@@ -16,7 +16,7 @@ angular.module('glint.auth', [])
       });
   };
 
-  self.signup = function() {};
+  self.signup = function() {
     self.user.username = _.escape(self.user.username);
     self.user.password = _.escape(self.user.password);
     var user = JSON.stringify(self.user);
@@ -26,4 +26,5 @@ angular.module('glint.auth', [])
       .catch(function (error){
         console.error('signup error', error);
       });
+  };
 });
