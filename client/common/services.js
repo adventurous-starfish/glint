@@ -1,6 +1,7 @@
 var glintServices = angular.module('glint.services', []);
 
 glintServices.factory('Ideas', function ($http){
+
   var getIdeas = function (){
     return $http({
       method: 'GET',
@@ -12,7 +13,7 @@ glintServices.factory('Ideas', function ($http){
     });
   };
 
-  var createIdea = function(idea){
+  var createIdea = function (idea){
     return $http({
       method: 'POST',
       url: '/api/ideas',
@@ -32,8 +33,7 @@ glintServices.factory('Ideas', function ($http){
 
 glintServices.factory('Votes', function($http){
 
-  // POST
-  var upvote = function(idea){
+  var upvote = function (idea){
     return $http({
       method: 'POST',
       url: '/api/vote/upvote',
@@ -47,7 +47,7 @@ glintServices.factory('Votes', function($http){
     });
   };
 
-  var downvote = function(idea){
+  var downvote = function (idea){
     return $http({
       method: 'POST',
       url: '/api/vote/downvote',
@@ -68,10 +68,11 @@ glintServices.factory('Votes', function($http){
 });
 
 glintServices.factory('Auth', function($http){
+  
   var login = function (user){
     return $http({
-      method: 'POST', // PUT?
-      url: '/api/???',
+      method: 'POST',
+      url: '/api/signin',
       data: user
     })
     .then(function (response){
@@ -84,7 +85,7 @@ glintServices.factory('Auth', function($http){
   var signup = function (user){
     return $http({
       method: 'POST',
-      url: '/api/???',
+      url: '/api/signup',
       data: user
     })
     .then(function (response){
