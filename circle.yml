@@ -2,5 +2,4 @@ deployment:
   production:
     branch: master
       commands:
-        - ./deploy.sh:
-          timeout: 300
+        - ./deploy.sh
