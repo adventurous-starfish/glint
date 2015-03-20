@@ -28,7 +28,8 @@ module.exports = function(config) {
       'common/*.js',
       'app/ideas/*.js',
       'app/votes/*.js',
-      'app/auth/*.js'
+      'app/auth/*.js',
+      'app/comments/*.js'
     ],
 
 

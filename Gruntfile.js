@@ -14,7 +14,8 @@ module.exports = function(grunt) {
         'client/common/services.js',
         'client/app/ideas/ideas.js',
         'client/app/votes/votes.js',
-        'client/app/auth/auth.js'
+        'client/app/auth/auth.js',
+        'client/app/comments/comments.js'
         ],
         dest: 'client/dist/build.min.js'
       }
