@@ -20,6 +20,10 @@ describe('AuthCtrl', function(){
     });
   }));
 
+  it('should have a user property', function(){
+    expect(ctrl).to.have.property('user');
+  });
+
   it('should have a login function', function(){
     expect(ctrl.login).to.be.a('function');
   });
