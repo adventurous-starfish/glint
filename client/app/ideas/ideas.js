@@ -27,8 +27,8 @@ angular.module('glint.ideas', [])
     } else {
 
     // escape to handle XSS injection
-    _.escape(self.idea.title);
-    _.escape(self.idea.text);
+    self.idea.title = _.escape(self.idea.title);
+    self.idea.text = _.escape(self.idea.text);
     var idea = JSON.stringify(self.idea);
     
     // POST new idea, display confirmation, redisplay all ideas

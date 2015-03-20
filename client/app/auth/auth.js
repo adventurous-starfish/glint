@@ -5,7 +5,11 @@ angular.module('glint.auth', [])
   self.user = {};
 
   self.login = function() {
-    Auth.login()
+    self.user.username = _.escape(self.user.username);
+    self.user.password = _.escape(self.user.password);
+    var user = JSON.stringify(self.user);
+
+    Auth.login(user)
       .then(function (response){})
       .catch(function (error){
         console.error('login error', error);
@@ -13,7 +17,11 @@ angular.module('glint.auth', [])
   };
 
   self.signup = function() {};
-    Auth.signup()
+    self.user.username = _.escape(self.user.username);
+    self.user.password = _.escape(self.user.password);
+    var user = JSON.stringify(self.user);
+
+    Auth.signup(user)
       .then(function (response){})
       .catch(function (error){
         console.error('signup error', error);

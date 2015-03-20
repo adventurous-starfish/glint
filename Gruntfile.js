@@ -13,7 +13,8 @@ module.exports = function(grunt) {
         'client/app/glint.js',
         'client/common/services.js',
         'client/app/ideas/ideas.js',
-        'client/app/votes/votes.js'
+        'client/app/votes/votes.js',
+        'client/app/auth/auth.js'
         ],
         dest: 'client/dist/build.min.js'
       }
