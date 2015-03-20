@@ -29,11 +29,12 @@ describe('CommentsCtrl', function (){
   });
 
   it('should be able to make a successful POST request with submitComment()', function (){
+    var mockIdea_id = '5199aaa';
+    ctrl.comment.idea_id = mockIdea_id;
     ctrl.comment.text = 'This is the best idea ever.';
     // ctrl.comment.user_id = '1234abc';
-    var mockIdea_id = '5199aaa';
     $httpBackend.expectPOST("/api/comments").respond(200, '');
-    ctrl.submitComment(ctrl.comment, mockIdea_id);
+    ctrl.submitComment(mockIdea_id);
     $httpBackend.flush();
     ctrl.comment = {};
   });

@@ -104,11 +104,11 @@ glintServices.factory('Auth', function($http){
 
 glintServices.factory('Comments', function ($http){
   
-  var createComment = function (idea_id){
+  var createComment = function (comment){
     return $http({
       method: 'POST',
       url: '/api/comments',
-      data: idea_id
+      data: comment
     }).then(function (response){
       return response.data;
     }).catch(function (error) {

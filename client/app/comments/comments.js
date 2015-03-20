@@ -6,12 +6,12 @@ angular.module('glint.comments', [])
 
   self.submitComment = function (idea_id){
 
+    // set self.comment.idea_id
     // set self.comment.user_id
-    // set self.comment
     // escape and stringify
     comment = JSON.stringify(self.comment);
 
-    Comments.createComment(comment, idea_id)
+    Comments.createComment(comment)
       .then(function (response){
         //
       })
