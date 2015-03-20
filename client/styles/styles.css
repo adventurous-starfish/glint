@@ -209,42 +209,50 @@ a.glint-logo-icon:hover{
   background-color: rgba(0,0,0,0) !important;
 }
 
-.ng-enter {
+/* Idea Post transitions */
+
+.idea-post-repeat.ng-enter {
   transition: 0.75s;
   opacity: 0;
 }
 
-.ng-enter-active {
+.idea-post-repeat.ng-enter-active {
   opacity: 1;
 }
 
-.ng-enter-stagger {
+.idea-post-repeat.ng-enter-stagger {
   transition-delay: 0.2s;
 }
 
-.ng-leave {
+.idea-post-repeat.ng-leave {
   transition: 0.75s;
   opacity: 1;
 }
 
-.ng-leave-active {
+.idea-post-repeat.ng-leave-active {
   opacity: 0;
 }
 
+/* Form description transitions */
+
 .form-description.ng-enter {
   transition: 0.75s;
+  opacity: 0;
   height: 0px;
 }
 
 .form-description.ng-enter-active {
   height: 73px;
+  opacity: 1;
 }
 
 .form-description.ng-leave {
   transition: 0.75s;
   height: 73px;
+  opacity: 1;
 }
 
 .form-description.ng-leave-active {
   height: 0;
+  opacity: 0;
 }
