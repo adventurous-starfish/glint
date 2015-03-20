@@ -68,7 +68,7 @@ glintServices.factory('Votes', function($http){
 });
 
 glintServices.factory('Auth', function($http){
-  
+
   var login = function (user){
     return $http({
       method: 'POST',
@@ -101,3 +101,37 @@ glintServices.factory('Auth', function($http){
     signup: signup
   };
 });
+
+glintServices.factory('Comments', function ($http){
+  
+  var createComment = function (comment){
+    return $http({
+      method: 'POST',
+      url: '/api/comments',
+      data: comment
+    }).then(function (response){
+      return response.data;
+    }).catch(function (error) {
+      console.error('createComments error', error);
+    });
+
+  };
+
+  var getComments = function (idea_id){
+    return $http({
+      method: 'GET',
+      url: '/api/comments',
+      data: idea_id
+    }).then(function (response){
+      return response.data;
+    }).catch(function (error) {
+      console.error('getComments error', error);
+    });
+  };
+
+  return {
+    createComment: createComment,
+    getComments: getComments
+  };
+});
+

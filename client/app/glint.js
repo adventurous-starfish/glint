@@ -3,6 +3,7 @@ var app = angular.module('glint', [
   'glint.ideas',
   'glint.votes',
   'glint.auth',
+  'glint.comments',
   'ngAnimate'
   ])
 
