@@ -66,3 +66,37 @@ glintServices.factory('Votes', function($http){
     downvote: downvote
   };
 });
+
+glintServices.factory('Auth', function($http){
+  var login = function (user){
+    return $http({
+      method: 'POST', // PUT?
+      url: '/api/???',
+      data: user
+    })
+    .then(function (response){
+      return response.data;
+    })
+    .catch(function (error) {
+      console.error('login error', error);
+    });  };
+
+  var signup = function (user){
+    return $http({
+      method: 'POST',
+      url: '/api/???',
+      data: user
+    })
+    .then(function (response){
+      return response.data;
+    })
+    .catch(function (error) {
+      console.error('signup error', error);
+    });
+  };
+
+  return {
+    login: login,
+    signup: signup
+  };
+});
