@@ -3,6 +3,7 @@ var request = require('supertest');
 var app = require('../serverSetup.js').app;
 var db = require('../serverSetup.js').db;
 var Idea = require('../ideas/ideaModel');
+var Comment = require('../comments/commentModel');
 
 describe('', function() {
   
@@ -138,6 +139,129 @@ describe('', function() {
         .end(done);
     });
 
+  });
+
+  describe('Comments on Ideas: ', function() { 
+
+    afterEach(function(done) {
+        Idea.remove({}, function() {
+          done();
+        });
+    });
+
+    it('Adds a comment to an existing idea', function(done) {
+
+        idea = new Idea({
+        title: 'Test Idea 1',
+        text: 'This is a test.'
+        });
+
+        idea.save(function() {
+          Idea.findOne({'title': 'Test Idea 1'})
+          .exec(function(err, idea) {
+            if (err) {
+              console.log(err);
+            }
+      
+            request(app)
+            .post('/api/comments')
+            .send({
+              text: 'This is a test comment.',
+              idea_id: idea._id
+            })
+            .expect(200)
+            .expect(function(res) {
+              expect(res.body.text).to.equal('This is a test comment.');
+              expect(res.body.idea_id).to.equal(idea._id + '');
+            })
+            .end(done);
+          });
+        });
+    });
+
+    it('A new comment creates a database entry', function(done) {
+
+        idea = new Idea({
+        title: 'Test Idea 1',
+        text: 'This is a test.'
+        });
+
+        idea.save(function() {
+          Idea.findOne({'title': 'Test Idea 1'})
+          .exec(function(err, idea) {
+            if (err) {
+              console.log(err);
+            }
+      
+            request(app)
+            .post('/api/comments')
+            .send({
+              text: 'This is a test comment.',
+              idea_id: idea._id
+            })
+            .expect(200)
+            .expect(function(res) {
+              Comment.findOne({'text' : 'This is a test comment.'})
+              .exec(function(err, comment) {
+                if (err) {
+                  console.log(err);
+                }
+                expect(comment.text).to.equal('This is a test comment.');
+              })
+            })
+            .end(done);
+          });
+        });
+    });
+
+    it('Gets all of the comments for a specific idea', function(done) {
+
+      idea = new Idea({
+        title: 'Test Idea 1',
+        text: 'This is a test.'
+        });
+
+        idea.save(function() {
+          Idea.findOne({'title': 'Test Idea 1'})
+          .exec(function(err, idea) {
+            if (err) {
+              console.log(err);
+            }
+      
+            request(app)
+            .post('/api/comments')
+            .send({
+              text: 'This is a test comment.',
+              idea_id: idea._id
+            })
+            .expect(200)
+            .expect(function(res) {
+            
+              request(app)
+              .post('/api/comments')
+              .send({
+                text: 'This is a another test comment.',
+                idea_id: idea._id
+              })
+              .expect(200)
+              .expect(function(res) {
+
+                Comment.find()
+                .exec(function(err, comments) {
+                  if (err) {
+                    console.log(err);
+                  }
+
+                  expect(comments[0].text).to.equal('This is a test comment.');
+                  expect(comments[1].text).to.equal('This is another test comment.');
+                })
+              })
+            })
+            .end(done);
+          });
+        });
+      });
+      
   });
 
 });
