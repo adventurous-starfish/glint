@@ -1,28 +1,3 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-  <title>Glint</title>
-  <link rel="stylesheet" href="../../styles/styles.css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-  <link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
-</head>
-
-<body ng-app="glint">
-  <nav class="container-fluid nav-bar-custom">
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav navbar-left">
-        <li class="nav-logo">
-          <a class="glint-logo-icon" href="../../index.html"><img src="../../assets/glint-logo-small.png" alt=""></a>&nbsp;&nbsp;&nbsp;|</li>
-        <li class="tagline">Where programmers meet ideas</li>
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <li><a class ="login" href="signup.html">Sign up</a></li>
-      </ul>
-    </div>
-  </nav>
-
   <div class="row">
     <div class="col-md-4"></div>
     <div class="col-md-4 login-form" ng-controller="AuthCtrl as actrl">
@@ -38,17 +13,8 @@
         <input type="password" name="password" ng-model="actrl.user.password" id="inputPassword" class="form-control login-form-input" placeholder="Password" required>
         
         <button class="btn btn-lg btn-primary btn-block login-button" type="submit" ng-disable="signinForm.$invalid">Login</button>
-        <p class="sign-up-here">Not registered? Sign up <a href="signup.html">here</a></p>
+        <p class="sign-up-here">Not registered? Sign up <a href="#/signup">here</a></p>
       </form>
     </div>
     <div class="col-md-4"></div>
   </div>
-
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.12/angular.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.2/underscore-min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment.min.js"></script>
-  <script src="../glint.js"></script>
-  <script src="../../common/services.js"></script>
-  <script src="app/auth/auth.js"></script>
-</body>
-</html>

@@ -11,19 +11,19 @@ var app = angular.module('glint', [
 .config(function($routeProvider){
 	$routeProvider
 		.when('/', {
-        templateUrl: '../index.html',
+        templateUrl: 'app/ideas/ideas.html',
         controller: 'IdeasCtrl'
       })
     .when('/login', {
-        templateUrl: 'auth/login.html',
+        templateUrl: 'app/auth/login.html',
         controller: 'AuthCtrl'
       })
     .when('/signup', {
-        templateUrl: 'auth/signup.html',
+        templateUrl: 'app/auth/signup.html',
         controller: 'AuthCtrl'
       })
     .otherwise({
-        redirectTo: '../index.html'
+        redirectTo: '/'
       });
 })
 

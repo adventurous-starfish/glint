@@ -1,0 +1,51 @@
+<div class="jumbotron jumbo-top">
+  <h1 class="animated fadeInUp">What's your great idea?</h1>
+  <form class="navbar-form navbar-middle" ng-submit="ictrl.submitIdea()">
+
+    <!-- Enter Idea -->
+    <div class="form-idea animated fadeInUp">
+      <input name="idea-input" type="text" class="form-control form-title-control" placeholder="Enter idea here" ng-model="ictrl.idea.title" required>
+    </div>
+    
+    <!-- Enter Description -->
+    <div ng-if="ictrl.submitted" class="form-description ng-cloak">
+      <textarea name="description-input" rows="3" class="form-control form-description-control" placeholder="Enter description here" ng-model="ictrl.idea.text"></textarea>
+    </div>
+
+    <button type="submit" class="btn btn-default idea-submit-button animated fadeInUp">Submit</button>
+  </form>
+</div>
+
+<!-- User Feedback Message Area -->
+<div class="user-feedback-container ng-cloak" ng-show="ictrl.postSuccess">
+  <span class="post-idea-success" ng-click="ictrl.postSuccess = !ictrl.postSuccess">Your idea has been posted.</span>
+</div>
+
+<!-- Idea Row -->
+<div class="row idea-post ng-cloak idea-post-repeat" ng-repeat="idea in ictrl.data.ideas track by idea._id"> 
+  <div class="col-md-1">
+  </div>
+
+  <div class="idea-container">
+    <div class="col-md-1 upvote-downvote-wrapper" ng-controller="VotesCtrl as vctrl">
+      <i class="fa fa-sort-asc" ng-click="vctrl.upvote(idea)"></i> <!-- upvote -->
+      <div class="vote-points">{{ idea.votes }}</div>
+      <i class="fa fa-sort-desc" ng-click="vctrl.downvote(idea)"></i> <!-- downvote -->
+    </div>
+    <div class="col-md-8">
+      <div class="idea-wrapper">
+        <h3 class="idea-title">{{ idea.title }}</h3>
+        <h5 class="idea-description">{{ idea.text | limitTo: 130 }}{{ idea.text.length > 130 ? '...' : ''}}</h5>
+        <p class="timestamp-author">Submitted {{ idea.created_at | moment }} by {{ idea.created_by }}</p>
+      </div>
+    </div>
+    <div class="col-md-1 ">
+      <div class="comments-wrapper">
+        <i class="fa fa-comments"></i>
+        <p class="comments-amount">532</p>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-1">
+  </div>
+</div>
