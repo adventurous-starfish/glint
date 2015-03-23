@@ -143,16 +143,44 @@
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-1">&#182;</a>
               </div>
-              
+              <h2 id="auth-controller">Auth controller</h2>
+
             </div>
             
-            <div class="content"><div class='highlight'><pre>angular.module(<span class="hljs-string">'glint.auth'</span>, [])
+        </li>
+        
+        
+        <li id="section-2">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-2">&#182;</a>
+              </div>
+              <p>This feature is not finished yet. Current target is not to implement actual authorization, but simply to link users to ideas (and eventually comments).</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>
+angular.module(<span class="hljs-string">'glint.auth'</span>, [])
 
 .controller(<span class="hljs-string">'AuthCtrl'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(Auth)</span></span>{
   <span class="hljs-keyword">var</span> self = <span class="hljs-keyword">this</span>;
-  self.user = {};
+  self.user = {};</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-3">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-3">&#182;</a>
+              </div>
+              <p>Allow user to declare who they are to the system.</p>
 
-  self.login = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>  self.login = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
     self.user.username = _.escape(self.user.username);
     self.user.password = _.escape(self.user.password);
     <span class="hljs-keyword">var</span> user = <span class="hljs-built_in">JSON</span>.stringify(self.user);
@@ -162,9 +190,22 @@
       .catch(<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(error)</span></span>{
         <span class="hljs-built_in">console</span>.error(<span class="hljs-string">'login error'</span>, error);
       });
-  };
+  };</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-4">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-4">&#182;</a>
+              </div>
+              <p>Allow user to first-time identify themselves to the system.</p>
 
-  self.signup = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>  self.signup = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
     self.user.username = _.escape(self.user.username);
     self.user.password = _.escape(self.user.password);
     <span class="hljs-keyword">var</span> user = <span class="hljs-built_in">JSON</span>.stringify(self.user);

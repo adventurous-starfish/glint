@@ -1,21 +1,19 @@
+\\ Votes controller
+\\ ----------------
+
 angular.module('glint.votes', [])
 
 .controller('VotesCtrl', function(Votes){
   var self = this;
 
-  // call factory db POST function, and handle results
-  // options: 
-  //   1) doing this updates the number to reflect latest db count
-  //      this may be confusing for user who sees the # go up/down lots
-  //   2) doing this simply increments only by user added vote, keeping
-  //      the results more like what user expects
+  // Display the user's upvotes and pass them along to the db.
   self.upvote = function(idea){
     var ideaRef = idea;
 
     idea = JSON.stringify(idea);
     Votes.upvote(idea)
       .then(function (response){
-        // update the specific idea's vote count
+        // Update the specific idea's vote count.
         ideaRef.votes++;
       })
       .catch(function (error){
@@ -23,13 +21,14 @@ angular.module('glint.votes', [])
       });
   };
 
+  // Display the user's downvotes and pass them along to the db.
   self.downvote = function(idea){
     var ideaRef = idea;
 
     idea = JSON.stringify(idea);
     Votes.downvote(idea)
       .then(function (response){
-        // update the specific idea's vote count
+        // Update the specific idea's vote count.
         ideaRef.votes--;
       })
       .catch(function (error){

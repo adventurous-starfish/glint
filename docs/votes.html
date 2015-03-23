@@ -146,7 +146,10 @@
               
             </div>
             
-            <div class="content"><div class='highlight'><pre>angular.module(<span class="hljs-string">'glint.votes'</span>, [])
+            <div class="content"><div class='highlight'><pre>\\ Votes controller
+\\ ----------------
+
+angular.module(<span class="hljs-string">'glint.votes'</span>, [])
 
 .controller(<span class="hljs-string">'VotesCtrl'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(Votes)</span></span>{
   <span class="hljs-keyword">var</span> self = <span class="hljs-keyword">this</span>;</pre></div></div>
@@ -160,12 +163,7 @@
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-2">&#182;</a>
               </div>
-              <p>call factory db POST function, and handle results
-options: 
-  1) doing this updates the number to reflect latest db count
-     this may be confusing for user who sees the # go up/down lots
-  2) doing this simply increments only by user added vote, keeping
-     the results more like what user expects</p>
+              <p>Display the user’s upvotes and pass them along to the db.</p>
 
             </div>
             
@@ -185,7 +183,7 @@ options:
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-3">&#182;</a>
               </div>
-              <p>update the specific idea’s vote count</p>
+              <p>Update the specific idea’s vote count.</p>
 
             </div>
             
@@ -194,14 +192,7 @@ options:
       .catch(<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(error)</span></span>{
         <span class="hljs-built_in">console</span>.error(<span class="hljs-string">'upvote error'</span>, error);
       });
-  };
-
-  self.downvote = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(idea)</span></span>{
-    <span class="hljs-keyword">var</span> ideaRef = idea;
-
-    idea = <span class="hljs-built_in">JSON</span>.stringify(idea);
-    Votes.downvote(idea)
-      .then(<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(response)</span></span>{</pre></div></div>
+  };</pre></div></div>
             
         </li>
         
@@ -212,7 +203,27 @@ options:
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-4">&#182;</a>
               </div>
-              <p>update the specific idea’s vote count</p>
+              <p>Display the user’s downvotes and pass them along to the db.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>  self.downvote = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(idea)</span></span>{
+    <span class="hljs-keyword">var</span> ideaRef = idea;
+
+    idea = <span class="hljs-built_in">JSON</span>.stringify(idea);
+    Votes.downvote(idea)
+      .then(<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(response)</span></span>{</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-5">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-5">&#182;</a>
+              </div>
+              <p>Update the specific idea’s vote count.</p>
 
             </div>
             
