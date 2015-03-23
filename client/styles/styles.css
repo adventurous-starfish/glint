@@ -136,6 +136,7 @@ i.fa-comments:active {
   padding: 0.5em 0;
   color: white;
 }
+
 .user-feedback-container:hover {
   cursor: pointer;
 }
@@ -258,5 +259,29 @@ a.glint-logo-icon:link{
 
 .form-description.ng-leave-active {
   height: 0;
+  opacity: 0;
+}
+
+
+.post-idea-animation.ng-enter {
+  transition: 0.75s;
+  opacity: 0;
+  height: 0px;
+}
+
+.post-idea-animation.ng-enter-active {
+  height: 34px;
+  opacity: 1;
+}
+
+.post-idea-animation.ng-leave {
+  transition: 0.75s;
+  height: 34px;
+  opacity: 1;
+}
+
+.post-idea-animation.ng-leave-active {
+  height: 0;
+  padding: 0;
   opacity: 0;
 }

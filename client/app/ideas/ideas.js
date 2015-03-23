@@ -19,7 +19,7 @@ angular.module('glint.ideas', [])
   };
 
   // submit new Idea
-  self.submitIdea = function (){
+  self.submitIdea = function ($timeout){
 
     // show description box
     if (self.submitted === false){
@@ -41,9 +41,6 @@ angular.module('glint.ideas', [])
         // clear form field2
         self.idea = {};
         self.displayIdeas();
-        setTimeout(function(){
-          self.postSuccess = false;
-        }, 2000);
       })
       .catch(function (error){
         console.error('createIdea error', error);
