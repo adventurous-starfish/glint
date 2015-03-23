@@ -3,7 +3,6 @@
 > Where programmers meet ideas
 
 - Use [glint](http://glintapp.azurewebsites.net)
-
 - View the glint website [here](http://adventurous-starfish.github.io/glint/)
 
 ## Team
