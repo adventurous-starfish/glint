@@ -64,6 +64,21 @@ module.exports = function(grunt) {
       }
     },
 
+    docco: {
+      options: {
+        output: 'docs/',
+        layout: 'parallel'
+      },
+      all: {
+        files: {
+          src: [
+            '<%= concat.dist.src %>',
+            'server/**/*.js'
+          ]
+        }
+      }
+    },
+
     nodemon: {
       dev: {
         script: 'server.js'
@@ -110,7 +125,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-nodemon');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-shell');
-
+  grunt.loadNpmTasks('grunt-docco-multi');
 
   // Task(s)
   grunt.registerTask('server-dev', function (target) {
@@ -129,6 +144,10 @@ module.exports = function(grunt) {
     'jshint',
     'mochaTest',
     'karma'
+  ]);
+
+  grunt.registerTask('annotate', [
+    'docco'
   ]);
 
   grunt.registerTask('build', [
