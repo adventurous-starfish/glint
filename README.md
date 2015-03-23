@@ -11,12 +11,13 @@
 
 ## Table of Contents
 
+1. [Team](#team)
 1. [Usage](#Usage)
 1. [Requirements](#requirements)
 1. [Development](#development)
     1. [Installing Dependencies](#installing-dependencies)
     1. [Tasks](#tasks)
-1. [Team](#team)
+1. [Roadmap](#roadmap)
 1. [Contributing](#contributing)
 
 ## Usage
@@ -41,6 +42,20 @@ sudo npm install -g bower
 npm install
 bower install
 ```
+
+## Tasks
+
+From within the root directory:
+
+```sh
+grunt (task)
+```
+
+> grunt tasks:
+- grunt deploy - runs test, build, and upload. Is run with a --prod flag for production deployment by Azure
+- grunt test - runs unit tests on the frontend and backend
+- grunt build - concats and minifies source code files
+- grunt upload - runs the server either locally or in production based on flags used on the grunt deploy task
 
 ### Roadmap
 
