@@ -31,7 +31,7 @@ All you need is an idea or the lack of an idea.
 > "I've never felt so good about myself as when I'm contributing to the next big thing out there. Karma is the best part of my day." --Maximer Sullivan
 
 **Get started today!**  
-Head to our site [here](http://glintapp.azurewebsites.net/) at [glintapp.azurewebsites.net](http://glintapp.azurewebsites.net/).
+Head to our site at [glintapp.azurewebsites.net](http://glintapp.azurewebsites.net/).
 
 *Find the next big idea!*
 ****
