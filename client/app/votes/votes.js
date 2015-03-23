@@ -1,5 +1,5 @@
-\\ Votes controller
-\\ ----------------
+// Votes controller
+// ----------------
 
 angular.module('glint.votes', [])
 
