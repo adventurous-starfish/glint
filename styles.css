@@ -128,3 +128,7 @@ i.social-icons {
 i.social-icons:hover {
   color: #046380;
 }
+
+.top-nav-bar {
+  height: 0;
+}
