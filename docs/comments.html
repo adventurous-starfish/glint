@@ -143,16 +143,9 @@
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-1">&#182;</a>
               </div>
-              
+              <h2 id="comments-controller">Comments controller</h2>
+
             </div>
-            
-            <div class="content"><div class='highlight'><pre>angular.module(<span class="hljs-string">'glint.comments'</span>, [])
-
-.controller(<span class="hljs-string">'CommentsCtrl'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(Comments)</span></span>{
-  <span class="hljs-keyword">var</span> self = <span class="hljs-keyword">this</span>;
-  self.comment = {};
-
-  self.submitComment = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(idea_id)</span></span>{</pre></div></div>
             
         </li>
         
@@ -163,9 +156,43 @@
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-2">&#182;</a>
               </div>
-              <p>set self.comment.idea_id
-set self.comment.user_id
-escape and stringify</p>
+              <p>This feature is still in development, but a good deal of work for it has already been done.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>
+angular.module(<span class="hljs-string">'glint.comments'</span>, [])
+
+.controller(<span class="hljs-string">'CommentsCtrl'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(Comments)</span></span>{
+  <span class="hljs-keyword">var</span> self = <span class="hljs-keyword">this</span>;
+  self.comment = {};</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-3">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-3">&#182;</a>
+              </div>
+              <p>Submit eventual form inputs to the db and display something back to the user on success.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>  self.submitComment = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(idea_id)</span></span>{</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-4">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-4">&#182;</a>
+              </div>
+              <p>The comment object needs to be populated with form inputs here.
+User input will need to be escaped, and stringified. Refer to the comment schema for the fields needed, but likely <code>self.comment.text</code>, <code>self.comment.idea_id</code>, and <code>self.comment.created_by</code> will be necessary.</p>
 
             </div>
             
@@ -177,35 +204,50 @@ escape and stringify</p>
         </li>
         
         
-        <li id="section-3">
+        <li id="section-5">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-3">&#182;</a>
+                <a class="pilcrow" href="#section-5">&#182;</a>
               </div>
-              
+              <p>Display the supplied comment back to the user who submitted it.</p>
+
             </div>
             
             <div class="content"><div class='highlight'><pre>      })
       .catch(<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(error)</span></span>{
         <span class="hljs-built_in">console</span>.error(<span class="hljs-string">'comment error'</span>, error);
       });
-  };
+  };</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-6">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-6">&#182;</a>
+              </div>
+              <p>Display all comments for a specific idea.</p>
 
-  self.displayComments = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(idea_id)</span></span>{
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>  self.displayComments = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(idea_id)</span></span>{
     Comments.getComments(idea_id)
       .then(<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(response)</span></span>{</pre></div></div>
             
         </li>
         
         
-        <li id="section-4">
+        <li id="section-7">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-4">&#182;</a>
+                <a class="pilcrow" href="#section-7">&#182;</a>
               </div>
-              
+              <p>Display this idea’s comments.</p>
+
             </div>
             
             <div class="content"><div class='highlight'><pre>      })

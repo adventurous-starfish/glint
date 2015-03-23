@@ -143,7 +143,34 @@
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-1">&#182;</a>
               </div>
+              <h2 id="glint">Glint</h2>
+
+            </div>
+            
+        </li>
+        
+        
+        <li id="section-2">
+            <div class="annotation">
               
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-2">&#182;</a>
+              </div>
+              <p>This is our app’s main Angular module.</p>
+
+            </div>
+            
+        </li>
+        
+        
+        <li id="section-3">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-3">&#182;</a>
+              </div>
+              <p>Our dependencies are by shared services, feature controllers, and third-party modules.</p>
+
             </div>
             
             <div class="content"><div class='highlight'><pre><span class="hljs-keyword">var</span> app = angular.module(<span class="hljs-string">'glint'</span>, [
@@ -154,9 +181,22 @@
   <span class="hljs-string">'glint.comments'</span>,
   <span class="hljs-string">'ngAnimate'</span>,
   <span class="hljs-string">'ngRoute'</span>
-  ])
+  ])</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-4">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-4">&#182;</a>
+              </div>
+              <p>Routing configuration. Eventually, this is where the controllers for the specific views will be declared, so they don’t have to be referred to in our HTML. (Eg. <varname> instead of AuthCtrl.<varname>)</p>
 
-.config(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">($routeProvider)</span></span>{
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>.config(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">($routeProvider)</span></span>{
 	$routeProvider
 		.when(<span class="hljs-string">'/'</span>, {
         templateUrl: <span class="hljs-string">'app/ideas/ideas.html'</span>
@@ -170,9 +210,22 @@
     .otherwise({
         redirectTo: <span class="hljs-string">'/'</span>
       });
-})
+})</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-5">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-5">&#182;</a>
+              </div>
+              <p>Custom filter for applying moment.js to our timestamps.</p>
 
-.filter(<span class="hljs-string">'moment'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> </span>{
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>.filter(<span class="hljs-string">'moment'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> </span>{
   <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(dateString)</span> </span>{
       <span class="hljs-keyword">return</span> moment(dateString).fromNow();
   };
