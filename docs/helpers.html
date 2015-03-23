@@ -143,17 +143,9 @@
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-1">&#182;</a>
               </div>
-              
+              <h2 id="helper-functions-for-the-server-side">Helper Functions for the Server-Side</h2>
+
             </div>
-            
-            <div class="content"><div class='highlight'><pre><span class="hljs-built_in">module</span>.exports = {
-
-  logErrors: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(err, req, res, next)</span> </span>{
-    <span class="hljs-built_in">console</span>.error(err.stack);
-    next(err);
-  },
-
-  handleErrors: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(err, req, res, next)</span> </span>{</pre></div></div>
             
         </li>
         
@@ -164,7 +156,56 @@
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-2">&#182;</a>
               </div>
-              <p>send client the error message</p>
+              <p>These helper utility functions are used for logging and handling errors on the server-side. </p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>
+<span class="hljs-built_in">module</span>.exports = {</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-3">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-3">&#182;</a>
+              </div>
+              <p>Log any errors which are passed along from the server.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>  logErrors: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(err, req, res, next)</span> </span>{
+    <span class="hljs-built_in">console</span>.error(err.stack);
+    next(err);
+  },</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-4">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-4">&#182;</a>
+              </div>
+              <p>Handle any errors which are passed along from the server by sending a 500 status code and the error message back to the client in the response.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>  handleErrors: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(err, req, res, next)</span> </span>{</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-5">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-5">&#182;</a>
+              </div>
+              <p>Send client the error message.</p>
 
             </div>
             

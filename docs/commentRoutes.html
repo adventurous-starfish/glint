@@ -143,12 +143,9 @@
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-1">&#182;</a>
               </div>
-              
-            </div>
-            
-            <div class="content"><div class='highlight'><pre><span class="hljs-keyword">var</span> commentController = <span class="hljs-built_in">require</span>(<span class="hljs-string">'./commentController.js'</span>);
+              <h2 id="comment-routes">Comment Routes</h2>
 
-<span class="hljs-built_in">module</span>.exports = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(app)</span> </span>{</pre></div></div>
+            </div>
             
         </li>
         
@@ -159,9 +156,25 @@
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-2">&#182;</a>
               </div>
-              <p>further route from the ‘/api/comments’ path
-a GET will return all comments for the specified idea
-a POST will add a comment to the specified idea</p>
+              <p>The Comment routes further routes any requests to /api/comments in the middleware to specific Comment methods defined in the Comment controller.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>
+<span class="hljs-keyword">var</span> commentController = <span class="hljs-built_in">require</span>(<span class="hljs-string">'./commentController.js'</span>);
+
+<span class="hljs-built_in">module</span>.exports = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(app)</span> </span>{</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-3">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-3">&#182;</a>
+              </div>
+              <p>Further route from the /api/comments path. A GET request will return all comments for the specified idea. A POST request will add a comment to the specified idea.</p>
 
             </div>
             

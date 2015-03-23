@@ -1,3 +1,8 @@
+// Idea Model
+// ----------
+//
+// The Idea model defines the structure of all of the Idea documents created.
+
 var mongoose = require('mongoose');
 
 var IdeaSchema = new mongoose.Schema({
