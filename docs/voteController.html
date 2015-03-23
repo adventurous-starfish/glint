@@ -143,13 +143,9 @@
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-1">&#182;</a>
               </div>
-              
-            </div>
-            
-            <div class="content"><div class='highlight'><pre><span class="hljs-keyword">var</span> Q = <span class="hljs-built_in">require</span>(<span class="hljs-string">'q'</span>);
-<span class="hljs-keyword">var</span> Idea = <span class="hljs-built_in">require</span>(<span class="hljs-string">'../ideas/ideaModel.js'</span>);
+              <h2 id="vote-controller">Vote Controller</h2>
 
-<span class="hljs-built_in">module</span>.exports = {</pre></div></div>
+            </div>
             
         </li>
         
@@ -160,13 +156,15 @@
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-2">&#182;</a>
               </div>
-              <p>adds one to the vote count for a given idea</p>
+              <p>The vote controller handles requests passed from the vote router.</p>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>  upvote: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(req, res, next)</span> </span>{
-    updateVoteCount(req, res, <span class="hljs-number">1</span>);
-  },</pre></div></div>
+            <div class="content"><div class='highlight'><pre>
+<span class="hljs-keyword">var</span> Q = <span class="hljs-built_in">require</span>(<span class="hljs-string">'q'</span>);
+<span class="hljs-keyword">var</span> Idea = <span class="hljs-built_in">require</span>(<span class="hljs-string">'../ideas/ideaModel.js'</span>);
+
+<span class="hljs-built_in">module</span>.exports = {</pre></div></div>
             
         </li>
         
@@ -177,17 +175,13 @@
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-3">&#182;</a>
               </div>
-              <p>subtracts one from the vote count for a given idea</p>
+              <p>Add one to the vote count for a given idea.</p>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>  downvote: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(req, res, next)</span> </span>{
-    updateVoteCount(req, res, -<span class="hljs-number">1</span>);
-  }
-
-};
-
-<span class="hljs-keyword">var</span> updateVoteCount = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(req, res, changeValue)</span> </span>{</pre></div></div>
+            <div class="content"><div class='highlight'><pre>  upvote: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(req, res, next)</span> </span>{
+    updateVoteCount(req, res, <span class="hljs-number">1</span>);
+  },</pre></div></div>
             
         </li>
         
@@ -198,7 +192,41 @@
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-4">&#182;</a>
               </div>
-              <p>bind the findOneandUpdate method to use promises</p>
+              <p>Subtract one from the vote count for a given idea.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>  downvote: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(req, res, next)</span> </span>{
+    updateVoteCount(req, res, -<span class="hljs-number">1</span>);
+  }
+
+};</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-5">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-5">&#182;</a>
+              </div>
+              <p>Update the vote count for an idea.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="hljs-keyword">var</span> updateVoteCount = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(req, res, changeValue)</span> </span>{</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-6">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-6">&#182;</a>
+              </div>
+              <p>Bind the findOneandUpdate method to use promises</p>
 
             </div>
             

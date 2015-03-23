@@ -143,13 +143,9 @@
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-1">&#182;</a>
               </div>
-              
-            </div>
-            
-            <div class="content"><div class='highlight'><pre><span class="hljs-keyword">var</span> Q = <span class="hljs-built_in">require</span>(<span class="hljs-string">'q'</span>);
-<span class="hljs-keyword">var</span> Idea = <span class="hljs-built_in">require</span>(<span class="hljs-string">'./ideaModel.js'</span>);
+              <h2 id="idea-controller">Idea Controller</h2>
 
-<span class="hljs-built_in">module</span>.exports = {</pre></div></div>
+            </div>
             
         </li>
         
@@ -160,11 +156,9 @@
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-2">&#182;</a>
               </div>
-              <p>function to retrieve all of the ideas that exist in the MongoDB</p>
+              <p>The idea controller handles requests passed from the idea router.</p>
 
             </div>
-            
-            <div class="content"><div class='highlight'><pre>  allIdeas: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(req, res, next)</span> </span>{</pre></div></div>
             
         </li>
         
@@ -175,7 +169,40 @@
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-3">&#182;</a>
               </div>
-              <p>bind the Mongoose find method to the Idea model, so that the Q module can use promises with it</p>
+              <p>The Q module is used to bind Mongoose methods to use promises.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="hljs-keyword">var</span> Q = <span class="hljs-built_in">require</span>(<span class="hljs-string">'q'</span>);
+<span class="hljs-keyword">var</span> Idea = <span class="hljs-built_in">require</span>(<span class="hljs-string">'./ideaModel.js'</span>);
+
+<span class="hljs-built_in">module</span>.exports = {</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-4">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-4">&#182;</a>
+              </div>
+              <p>Retrieve all of the ideas that exist in the MongoDB database.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>  allIdeas: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(req, res, next)</span> </span>{</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-5">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-5">&#182;</a>
+              </div>
+              <p>Bind the Mongoose find method to the Idea model, so that the Q module can use promises with it.</p>
 
             </div>
             
@@ -193,13 +220,13 @@
         </li>
         
         
-        <li id="section-4">
+        <li id="section-6">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-4">&#182;</a>
+                <a class="pilcrow" href="#section-6">&#182;</a>
               </div>
-              <p>function to add a new idea to the MongoDB database</p>
+              <p>Add a new idea to the MongoDB database.</p>
 
             </div>
             
@@ -208,13 +235,13 @@
         </li>
         
         
-        <li id="section-5">
+        <li id="section-7">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-5">&#182;</a>
+                <a class="pilcrow" href="#section-7">&#182;</a>
               </div>
-              <p>bind the Mongoose create method to the Idea model, so that the Q module can use promises with it</p>
+              <p>Bind the Mongoose create method to the Idea model, so that the Q module can use promises with it.</p>
 
             </div>
             
@@ -223,13 +250,13 @@
         </li>
         
         
-        <li id="section-6">
+        <li id="section-8">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-6">&#182;</a>
+                <a class="pilcrow" href="#section-8">&#182;</a>
               </div>
-              <p>create a new instance of an Idea model</p>
+              <p>Create a new document from the Idea model. If successfully created then the new Idea document is returned.</p>
 
             </div>
             

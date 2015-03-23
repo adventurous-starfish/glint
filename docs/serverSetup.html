@@ -143,13 +143,9 @@
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-1">&#182;</a>
               </div>
-              
-            </div>
-            
-            <div class="content"><div class='highlight'><pre><span class="hljs-keyword">var</span> express = <span class="hljs-built_in">require</span>(<span class="hljs-string">'express'</span>);
-<span class="hljs-keyword">var</span> mongoose = <span class="hljs-built_in">require</span>(<span class="hljs-string">'mongoose'</span>);
+              <h2 id="server-setup">Server Setup</h2>
 
-<span class="hljs-keyword">var</span> app = express();</pre></div></div>
+            </div>
             
         </li>
         
@@ -160,18 +156,13 @@
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-2">&#182;</a>
               </div>
-              <p>get the correct MongoDB connection depending on the environment</p>
+              <p>This is where we configure our Express server and connect it with the MongoDB database via Mongoose.</p>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>mongoURI = process.env.CUSTOMCONNSTR_MONGOLAB_URI || <span class="hljs-string">'mongodb://localhost:27017/glint'</span>;
-mongoose.connect(mongoURI);
-
-<span class="hljs-keyword">var</span> db = mongoose.connection;
-db.on(<span class="hljs-string">'error'</span>, <span class="hljs-built_in">console</span>.error.bind(<span class="hljs-built_in">console</span>, <span class="hljs-string">'connection error:'</span>));
-db.once(<span class="hljs-string">'open'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
-    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'MongoDB connection is open'</span>);
-});</pre></div></div>
+            <div class="content"><div class='highlight'><pre>
+<span class="hljs-keyword">var</span> express = <span class="hljs-built_in">require</span>(<span class="hljs-string">'express'</span>);
+<span class="hljs-keyword">var</span> mongoose = <span class="hljs-built_in">require</span>(<span class="hljs-string">'mongoose'</span>);</pre></div></div>
             
         </li>
         
@@ -182,7 +173,57 @@ db.once(<span class="hljs-string">'open'</span>, <span class="hljs-function"><sp
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-3">&#182;</a>
               </div>
-              <p>connect the server to the middleware</p>
+              <p>Create an Express server app.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="hljs-keyword">var</span> app = express();</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-4">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-4">&#182;</a>
+              </div>
+              <p>Get the correct MongoDB connection depending on the environment. If the app is deployed to Azure then we use the MongoLab connection string stored in the environment variable to connect to the database. Otherwise, if the app is run locally then we connect to the locally running instance of MongoDB. The local instance of MongoDB must be started prior to starting the local server.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>mongoURI = process.env.CUSTOMCONNSTR_MONGOLAB_URI || <span class="hljs-string">'mongodb://localhost:27017/glint'</span>;
+mongoose.connect(mongoURI);</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-5">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-5">&#182;</a>
+              </div>
+              <p>Log the status of the database connection.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="hljs-keyword">var</span> db = mongoose.connection;
+db.on(<span class="hljs-string">'error'</span>, <span class="hljs-built_in">console</span>.error.bind(<span class="hljs-built_in">console</span>, <span class="hljs-string">'connection error:'</span>));
+db.once(<span class="hljs-string">'open'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'MongoDB connection is open'</span>);
+});</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-6">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-6">&#182;</a>
+              </div>
+              <p>This connects the server with the routers defined in the middleware file.</p>
 
             </div>
             

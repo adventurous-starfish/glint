@@ -143,12 +143,9 @@
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-1">&#182;</a>
               </div>
-              
-            </div>
-            
-            <div class="content"><div class='highlight'><pre><span class="hljs-keyword">var</span> ideaController = <span class="hljs-built_in">require</span>(<span class="hljs-string">'./ideaController.js'</span>);
+              <h2 id="idea-routes">Idea Routes</h2>
 
-<span class="hljs-built_in">module</span>.exports = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(app)</span> </span>{</pre></div></div>
+            </div>
             
         </li>
         
@@ -159,9 +156,25 @@
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-2">&#182;</a>
               </div>
-              <p>route get and post requests from the home page
-GET will return all of the posted ideas from the database
-POST will add a new idea to the database</p>
+              <p>The Idea routes further routes any requests to /api/ideas in the middleware to specific Idea methods defined in the Idea controller.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>
+<span class="hljs-keyword">var</span> ideaController = <span class="hljs-built_in">require</span>(<span class="hljs-string">'./ideaController.js'</span>);
+
+<span class="hljs-built_in">module</span>.exports = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(app)</span> </span>{</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-3">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-3">&#182;</a>
+              </div>
+              <p>Further route from the /api/ideas path. A GET will return all of the posted ideas from the database. A POST will add a new idea to the database.</p>
 
             </div>
             
