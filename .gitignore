@@ -1,5 +1,8 @@
 ### node etc ###
 
+.gitignore
+.DS_Store
+
 # Logs
 logs
 *.log
