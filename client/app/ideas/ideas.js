@@ -19,7 +19,7 @@ angular.module('glint.ideas', [])
   };
 
   // submit new Idea
-  self.submitIdea = function (){
+  self.submitIdea = function ($timeout){
 
     // show description box
     if (self.submitted === false){

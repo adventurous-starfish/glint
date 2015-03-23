@@ -22,6 +22,7 @@ module.exports = function(config) {
       'https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment.min.js',
       'https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.2/underscore-min.js',
       'https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.15/angular-animate.min.js',
+      'https://ajax.googleapis.com/ajax/libs/angularjs/1.3.12/angular-route.min.js',
 
       // app code & spec files
       'app/*.js',

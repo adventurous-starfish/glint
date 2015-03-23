@@ -131,11 +131,12 @@ i.fa-comments:active {
 }
 
 .user-feedback-container {
-  background-color: #FFFFC2;
+  background-color: #046380;
   text-align: center;
   padding: 0.5em 0;
-  color: red;
+  color: white;
 }
+
 .user-feedback-container:hover {
   cursor: pointer;
 }
@@ -209,6 +210,10 @@ a.glint-logo-icon:hover{
   background-color: rgba(0,0,0,0) !important;
 }
 
+a.glint-logo-icon:link{
+  background-color: rgba(0,0,0,0) !important;
+}
+
 /* Idea Post transitions */
 
 .idea-post-repeat.ng-enter {
@@ -254,5 +259,29 @@ a.glint-logo-icon:hover{
 
 .form-description.ng-leave-active {
   height: 0;
+  opacity: 0;
+}
+
+
+.post-idea-animation.ng-enter {
+  transition: 0.75s;
+  opacity: 0;
+  height: 0px;
+}
+
+.post-idea-animation.ng-enter-active {
+  height: 34px;
+  opacity: 1;
+}
+
+.post-idea-animation.ng-leave {
+  transition: 0.75s;
+  height: 34px;
+  opacity: 1;
+}
+
+.post-idea-animation.ng-leave-active {
+  height: 0;
+  padding: 0;
   opacity: 0;
 }
