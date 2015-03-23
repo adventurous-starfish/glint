@@ -9,7 +9,7 @@
   "scripts": {
     "test": "npm run test-server",
     "test-server": "mocha ./server/spec/serverSpec.js"
-    },
+  },
   "dependencies": {
     "body-parser": "^1.5.2",
     "chai": "^1.9.0",
@@ -33,6 +33,7 @@
   },
   "devDependencies": {
     "grunt": "^0.4.5",
+    "grunt-docco-multi": "0.0.2",
     "karma-chai": "^0.1.0",
     "karma-mocha": "^0.1.10"
   }
