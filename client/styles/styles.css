@@ -131,10 +131,10 @@ i.fa-comments:active {
 }
 
 .user-feedback-container {
-  background-color: #FFFFC2;
+  background-color: #046380;
   text-align: center;
   padding: 0.5em 0;
-  color: red;
+  color: white;
 }
 .user-feedback-container:hover {
   cursor: pointer;
@@ -206,6 +206,10 @@ a.glint-logo-icon {
 }
 
 a.glint-logo-icon:hover{
+  background-color: rgba(0,0,0,0) !important;
+}
+
+a.glint-logo-icon:link{
   background-color: rgba(0,0,0,0) !important;
 }
 

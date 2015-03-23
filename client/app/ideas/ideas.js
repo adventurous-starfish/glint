@@ -41,6 +41,9 @@ angular.module('glint.ideas', [])
         // clear form field2
         self.idea = {};
         self.displayIdeas();
+        setTimeout(function(){
+          self.postSuccess = false;
+        }, 2000);
       })
       .catch(function (error){
         console.error('createIdea error', error);

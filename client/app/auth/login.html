@@ -1,20 +1,20 @@
-  <div class="row">
-    <div class="col-md-4"></div>
-    <div class="col-md-4 login-form" ng-controller="AuthCtrl as actrl">
-      <form class="form-signin" name="signinForm" ng-submit="signinForm.$valid && ctrl.login()" /novalidate>
-        <img class="logo-large" src="../../assets/glint-logo-large-teal.png" alt="">
-        
-        <label for="inputUsername" class="sr-only">Email address</label>
-        <p class="error" ng-show="signinForm.username.$error.required">Required Field</p>
-        <input type="text" name="username" ng-model="actrl.user.username" id="inputUsername" class="form-control login-form-input" placeholder="Username" required autofocus>
+<div class="row">
+  <div class="col-md-4"></div>
+  <div class="col-md-4 login-form" ng-controller="AuthCtrl as actrl">
+    <form class="form-signin" name="signinForm" ng-submit="signinForm.$valid && ctrl.login()" /novalidate>
+      <img class="logo-large" src="../../assets/glint-logo-large-teal.png" alt="">
+      
+      <label for="inputUsername" class="sr-only">Email address</label>
+      <p class="error" ng-show="signinForm.username.$error.required">Required Field</p>
+      <input type="text" name="username" ng-model="actrl.user.username" id="inputUsername" class="form-control login-form-input" placeholder="Username" required autofocus>
 
-        <label for="inputPassword" class="sr-only">Password</label>
-        <p class="error" ng-show="signinForm.password.$error.required">Required Field</p>
-        <input type="password" name="password" ng-model="actrl.user.password" id="inputPassword" class="form-control login-form-input" placeholder="Password" required>
-        
-        <button class="btn btn-lg btn-primary btn-block login-button" type="submit" ng-disable="signinForm.$invalid">Login</button>
-        <p class="sign-up-here">Not registered? Sign up <a href="#/signup">here</a></p>
-      </form>
-    </div>
-    <div class="col-md-4"></div>
+      <label for="inputPassword" class="sr-only">Password</label>
+      <p class="error" ng-show="signinForm.password.$error.required">Required Field</p>
+      <input type="password" name="password" ng-model="actrl.user.password" id="inputPassword" class="form-control login-form-input" placeholder="Password" required>
+      
+      <button class="btn btn-lg btn-primary btn-block login-button" type="submit" ng-disable="signinForm.$invalid">Login</button>
+      <p class="sign-up-here">Not registered? Sign up <a href="#/signup">here</a></p>
+    </form>
   </div>
+  <div class="col-md-4"></div>
+</div>
