@@ -4,6 +4,7 @@
 
 - Use [glint](http://glintapp.azurewebsites.net)
 - View the glint website [here](http://adventurous-starfish.github.io/glint/)
+- View our annotated source code [here](http://adventurous-starfish.github.io/glint/docs/glint.html)
 
 ## Team
 
