@@ -11,7 +11,7 @@ angular.module('glint.ideas', [])
   self.postSuccess = false;
   self.submitted = false;
 
-  // display all ideas currently in db
+  // Display all ideas currently in the database.
   self.displayIdeas = function(){
     Ideas.getIdeas()
       .then(function (results){
@@ -23,27 +23,27 @@ angular.module('glint.ideas', [])
       });
   };
 
-  // submit new Idea
+  // Submit a new idea.
   self.submitIdea = function ($timeout){
 
-    // show description box
+    // Show description box.
     if (self.submitted === false){
       self.submitted = true;
     } else {
 
-    // escape to handle XSS injection
+    // Escape user input.
     self.idea.title = _.escape(self.idea.title);
     self.idea.text = _.escape(self.idea.text);
     var idea = JSON.stringify(self.idea);
     
-    // POST new idea, display confirmation, redisplay all ideas
+    // POST new idea, display confirmation, redisplay all ideas.
     Ideas.createIdea(idea)
       .then(function (response){
-        // show user feedback
+        // Show user feedback.
         self.postSuccess = true;
-        // hide idea description field
+        // Hide idea description field.
         self.submitted = false;
-        // clear form field2
+        // Clear form fields after submit.
         self.idea = {};
         self.displayIdeas();
       })
