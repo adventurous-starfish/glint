@@ -120,3 +120,11 @@ i.fa.fa-github.fa-4x:hover {
 h1.basic-summary-bold {
   font-weight: bold !important;
 }
+
+i.social-icons {
+  color: #333;
+}
+
+i.social-icons:hover {
+  color: #046380;
+}
