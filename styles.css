@@ -132,3 +132,7 @@ i.social-icons:hover {
 .top-nav-bar {
   height: 0;
 }
+
+a.btn.btn-outline-inverse.btn-lg.visit-button:visited {
+  color: white;
+}
