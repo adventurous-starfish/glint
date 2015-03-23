@@ -56,6 +56,7 @@ grunt (task)
 - grunt test - runs unit tests on the frontend and backend
 - grunt build - concats and minifies source code files
 - grunt upload - runs the server either locally or in production based on flags used on the grunt deploy task
+- grunt annotate - creates annotated source code with docco in docs/ folder, for both client and server .js files.
 
 ### Roadmap
 
